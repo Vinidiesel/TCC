@@ -40,7 +40,7 @@
              //print_r($reg);
              if(testarHash($s,$reg -> senha)){
                 echo msg_sucesso('Logado Com sucesso');
-                $_SESSION['email'] = $reg -> email;
+                $_SESSION['email'] = $reg -> login_email;
                 $_SESSION['nome'] = $reg -> nome;
                 $_SESSION['adm'] = $reg -> adm;
              }else{
