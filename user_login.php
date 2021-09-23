@@ -24,13 +24,13 @@
     ?>
     <div id="corpo">
     <?php
-    $u=$_POST['usuario']?? null;
+    $u=$_POST['email']?? null;
     $s=$_POST['senha']?? null;
 
     if(is_null($u)|| is_null($s)){
         require "user_login_form.php";
     }else{
-        $q="select usuario,nome,senha,tipo from usuarios where usuario='$u' limit 1";
+        $q="select login_email,nome,senha,adm from usuario where login_email='$u' limit 1";
         $busca = $banco->query($q);
         if(!$busca){
             echo msg_erro("Falha ao acessar o banco!");
@@ -40,9 +40,9 @@
              //print_r($reg);
              if(testarHash($s,$reg -> senha)){
                 echo msg_sucesso('Logado Com sucesso');
-                $_SESSION['user'] = $reg -> usuario;
+                $_SESSION['email'] = $reg -> email;
                 $_SESSION['nome'] = $reg -> nome;
-                $_SESSION['tipo'] = $reg -> tipo;
+                $_SESSION['adm'] = $reg -> adm;
              }else{
                 echo msg_erro('Senha inválida');
              }

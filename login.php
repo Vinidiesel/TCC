@@ -2,14 +2,14 @@
 
 session_start();
 if(!isset($_SESSION['user'])){
-    $_SESSION['user']="";
+    $_SESSION['email']="";
     $_SESSION['nome']="";
-    $_SESSION['tipo']="";
+    $_SESSION['adm']="";
 }
 function logout(){
-    unset($_SESSION['user']);
+    unset($_SESSION['email']);
     unset($_SESSION['nome']);
-    unset($_SESSION['tipo']);
+    unset($_SESSION['adm']);
 }
 function is_logado(){
     if(empty($_SESSION['user'])){
@@ -19,11 +19,11 @@ function is_logado(){
     }
 }
 function is_admin(){
-    $t = $_SESSION['tipo'] ?? null;
+    $t = $_SESSION['adm'] ?? null;
     if(is_null($t)){
         return false;
     }else{
-        if($t == 'admin'){
+        if($t == 0){
             return true;
         }else{
             return false;
@@ -35,7 +35,7 @@ function is_editor(){
     if(is_null($t)){
         return false;
     }else{
-        if($t == 'editor'){
+        if($t == 1){
             return true;
         }else{
             return false;
@@ -69,6 +69,7 @@ echo gerarHash($original);
 echo "<br>";
 echo testarHash($original,'$2y$10$yj.JDPfpy1KEkSZluh7.KuLkqcpBgmsGfrgCKZbIyYwjeM33jcvmq')?"SIM":"NAO";
 */
+
 /*
 echo gerarHash('Nota10');
 echo "<br>";
