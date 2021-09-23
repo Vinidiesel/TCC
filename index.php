@@ -18,14 +18,14 @@
     ?>
     <div id="corpo">
         <?php //include_once "topo.php"; ?>
-        <h1>Divirta-se com os filmes</h1>
+        <h1>Site de noticias</h1>
         <form method="get" id="busca" action="index.php">
         Buscar: <input type="text" name="c" size="10" maxlength="40">
         <input type="submit" value="OK">
         </form>
         <table class="listagem">
             <?php
-            $q="select n.ID_NOTICIA from NOTICIA n ";
+            $q="select n.ID_NOTICIA, n.TITULO, n.DESCRICAO, n.IMAGEM, n.CATEGORIA from NOTICIA n join CATEGORIA c on n.CATEGORIA=c.ID_CATEGORIA ";
             if(!empty($chave)){
                 $q.="where n.TITULO like '%$chave%' or c.CATEGORIA like '%$chave%' ";
             }
