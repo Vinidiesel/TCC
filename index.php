@@ -11,13 +11,13 @@
     /*Com incluide se ele não encontrar o banco ele continua o site
     já com o require se ele não acha o site mata o resto*/
     require_once "banco.php";
-    /*require_once "includes/funcoes.php";
-    require_once "includes/login.php";*/
+    require_once "funcoes.php";
+    require_once "login.php";
     $ordem=$_GET['o'] ?? "n";
     $chave=$_GET['c'] ?? "";
     ?>
     <div id="corpo">
-        <?php //include_once "topo.php"; ?>
+        <?php include_once "topo.php"; ?>
         <h1>Site de noticias</h1>
         <form method="get" id="busca" action="index.php">
         Buscar: <input type="text" name="c" size="10" maxlength="40">
