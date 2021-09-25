@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if(!isset($_SESSION['user'])){
+if(!isset($_SESSION['email'])){
     $_SESSION['email']="";
     $_SESSION['nome']="";
     $_SESSION['adm']="";
@@ -12,7 +12,7 @@ function logout(){
     unset($_SESSION['adm']);
 }
 function is_logado(){
-    if(empty($_SESSION['user'])){
+    if(empty($_SESSION['email'])){
         return false;
     }else{
         return true;
@@ -23,7 +23,7 @@ function is_admin(){
     if(is_null($t)){
         return false;
     }else{
-        if($t == 0){
+        if($t == '0'){
             return true;
         }else{
             return false;
@@ -31,11 +31,11 @@ function is_admin(){
     }
 }
 function is_editor(){
-    $t = $_SESSION['tipo'] ?? null;
+    $t = $_SESSION['adm'] ?? null;
     if(is_null($t)){
         return false;
     }else{
-        if($t == 1){
+        if($t == '1'){
             return true;
         }else{
             return false;

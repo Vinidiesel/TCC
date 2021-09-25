@@ -30,7 +30,7 @@
     if(is_null($u)|| is_null($s)){
         require "user_login_form.php";
     }else{
-        $q="select login_email,nome,senha,adm from usuario where login_email='$u' limit 1";
+        $q="select login_email, nome, senha, ADM from usuario where login_email='$u' limit 1";
         $busca = $banco->query($q);
         if(!$busca){
             echo msg_erro("Falha ao acessar o banco!");
@@ -42,7 +42,7 @@
                 echo msg_sucesso('Logado Com sucesso');
                 $_SESSION['email'] = $reg -> login_email;
                 $_SESSION['nome'] = $reg -> nome;
-                $_SESSION['adm'] = $reg -> adm;
+                $_SESSION['adm'] = $reg -> ADM;
              }else{
                 echo msg_erro('Senha inválida');
              }
