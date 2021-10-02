@@ -5,11 +5,13 @@ if(!isset($_SESSION['email'])){
     $_SESSION['email']="";
     $_SESSION['nome']="";
     $_SESSION['adm']="";
+    $_SESSION['usuario']="";
 }
 function logout(){
     unset($_SESSION['email']);
     unset($_SESSION['nome']);
     unset($_SESSION['adm']);
+    unset($_SESSION['usuario']);
 }
 function is_logado(){
     if(empty($_SESSION['email'])){
@@ -71,7 +73,7 @@ echo testarHash($original,'$2y$10$yj.JDPfpy1KEkSZluh7.KuLkqcpBgmsGfrgCKZbIyYwjeM
 */
 
 /*
-echo gerarHash('Nota10');
+echo gerarHash('nota10');
 echo "<br>";
 echo testarHash('teste123','$2y$10$FFrXDTGYj.upqQg/prpi..L1Q2O0svJHxykp7peNsx0f4XRtbY9.C');
 echo "<br>";

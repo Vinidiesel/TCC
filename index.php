@@ -39,9 +39,9 @@
                     while($reg=$busca->fetch_object()){
                         $t = thumb($reg->FOTO);
                         echo "<tr><td><img src='$t' class='mini'>";
-                        echo "<td><a href='detalhes.php?cod=$reg->COD'>$reg->NOME</a>";
-                        echo "[$reg->GENERO]";
-                        echo "<br>$reg->PRODUTORA";
+                        echo "<td><a href='detalhes.php?cod=$reg->ID_NOTICIA'>$reg->TITULO</a>";
+                        echo "[$reg->CATEGORIA]";
+                        echo "<br>$reg->DESCRICAO";
                         if(is_admin()){
                             echo "<td><i class='material-icons'>add_circle</i>";
                             echo "<a href='filme_edit.php?cod=$reg->COD '<i class='material-icons'>edit</i></a>";
