@@ -8,9 +8,9 @@
 </head>
 <body>
     <?php
-    require_once "includes/banco.php";
-    require_once "includes/funcoes.php";
-     require_once "includes/login.php";
+    require_once "banco.php";
+    require_once "funcoes.php";
+     require_once "login.php";
     ?>
 <div> 
 <?php
@@ -25,11 +25,13 @@
                      $texto = $_POST['texto'] ?? null;
                      $imagem = $_POST['imagem'] ?? null;
                      $categoria= $_POST['categoria'] ?? null;
+                     $data = date('Y-m-d H:i:s');
+                     $usuario = $_SESSION['usuario'] ?? null;
                     if(empty($titulo)||empty($descricao)||empty($texto)||empty($imagem)||empty($categoria)){
                         echo msg_erro('todos são obrigatorios preencher');
                     }else{
             
-  $q= "INSERT INTO NOTICIA(NOME,GENERO,PRODUTORA,NOTA,DESCRICAO,FOTO) VALUES('$titulo','$descricao','$texto','$imagem','$categoria')";
+  $q= "INSERT INTO NOTICIA(ID_NOTICIA,TITULO,DESCRICAO,TEXTO,DIA,IMAGEM,CATEGORIA,ID_USUARIO) VALUES('','$titulo','$descricao','$texto','$data','$imagem','$categoria','$usuario')";
                         if($banco->query($q)){
                              echo msg_sucesso(" $titulo publicada");
                         }else{
@@ -40,9 +42,9 @@
             }
             ?>
             
-            }
+            
 </div>
 <?php echo voltar(); ?>
-    <?php include_once "rodape.php";?>
+    <?php /* include_once "rodape.php";*/?>
     </body>
 </html>

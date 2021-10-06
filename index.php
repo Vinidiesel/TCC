@@ -25,7 +25,7 @@
         </form>
         <table class="listagem">
             <?php
-            $q="select n.ID_NOTICIA, n.TITULO, n.DESCRICAO, n.IMAGEM, n.CATEGORIA from NOTICIA n join CATEGORIA c on n.CATEGORIA=c.ID_CATEGORIA ";
+            $q="select n.ID_NOTICIA, n.TITULO, n.DESCRICAO, n.IMAGEM, c.NOME from NOTICIA n join CATEGORIA c on n.CATEGORIA=c.ID_CATEGORIA ";
             if(!empty($chave)){
                 $q.="where n.TITULO like '%$chave%' or c.CATEGORIA like '%$chave%' ";
             }
@@ -37,14 +37,14 @@
                     echo "<tr><td>Nenhum registro encontardo";
                 }else{
                     while($reg=$busca->fetch_object()){
-                        $t = thumb($reg->FOTO);
+                        $t = thumb($reg->IMAGEM);
                         echo "<tr><td><img src='$t' class='mini'>";
                         echo "<td><a href='detalhes.php?cod=$reg->ID_NOTICIA'>$reg->TITULO</a>";
-                        echo "[$reg->CATEGORIA]";
+                        echo "[$reg->NOME]";
                         echo "<br>$reg->DESCRICAO";
                         if(is_admin()){
                             echo "<td><i class='material-icons'>add_circle</i>";
-                            echo "<a href='filme_edit.php?cod=$reg->COD '<i class='material-icons'>edit</i></a>";
+                            /*echo "<a href='filme_edit.php?cod=$reg->COD '<i class='material-icons'>edit</i></a>";*/
                             echo "<i class='material-icons'>delete</i>";
                         }elseif(is_editor()){
                             echo "<td>Alterar";
