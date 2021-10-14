@@ -35,7 +35,7 @@ img.full{
         </form>
         <table class="listagem">
             <?php
-            $q="select n.ID_NOTICIA, n.TITULO, n.DESCRICAO, n.IMAGEM, c.NOME from NOTICIA n join CATEGORIA c on n.CATEGORIA=c.ID_CATEGORIA ";
+            $q="select n.ID_NOTICIA, n.TITULO, n.DESCRICAO, n.IMAGEM, n.DIA, c.NOME from NOTICIA n join CATEGORIA c on n.CATEGORIA=c.ID_CATEGORIA ";
             if(!empty($chave)){
                 $q.="where n.TITULO like '%$chave%' or c.CATEGORIA like '%$chave%' ";
             }
@@ -52,6 +52,8 @@ img.full{
                         echo "<td><a href='detalhes.php?cod=$reg->ID_NOTICIA'>$reg->TITULO</a>";
                         echo "[$reg->NOME]";
                         echo "<br>$reg->DESCRICAO";
+                        echo "[$reg->DIA]";
+
                         if(is_admin()){
                             echo "<td><i class='material-icons'>add_circle</i>";
                             /*echo "<a href='filme_edit.php?cod=$reg->COD '<i class='material-icons'>edit</i></a>";*/

@@ -14,6 +14,10 @@
     ?>
 <div> 
 <?php
+$dataerrada=date('Y-m-d H:i:s');
+$fuso = new DateTimeZone('America/Sao_Paulo');
+$data = new DateTime($dataerrada);
+$data->setTimezone($fuso);
         if(!is_admin()){
             echo msg_erro('Área restrita você não tem permisão');
         }else{
@@ -25,13 +29,13 @@
                      $texto = $_POST['texto'] ?? null;
                      $imagem = $_POST['imagem'] ?? null;
                      $categoria= $_POST['categoria'] ?? null;
-                     $data = date('Y-m-d H:i:s');
+                     $databanco=$data->format('Y-m-d H:i:s');
                      $usuario = $_SESSION['usuario'] ?? null;
-                    if(empty($titulo)||empty($descricao)||empty($texto)||empty($imagem)||empty($categoria)){
+                    if(empty($titulo)||empty($descricao)||empty($texto)||empty($databanco)||empty($categoria)||empty($usuario)){
                         echo msg_erro('todos são obrigatorios preencher');
                     }else{
             
-  $q= "INSERT INTO NOTICIA(ID_NOTICIA,TITULO,DESCRICAO,TEXTO,DIA,IMAGEM,CATEGORIA,ID_USUARIO) VALUES('','$titulo','$descricao','$texto','$data','$imagem','$categoria','$usuario')";
+  $q= "INSERT INTO NOTICIA(ID_NOTICIA,TITULO,DESCRICAO,TEXTO,DIA,IMAGEM,CATEGORIA,ID_USUARIO) VALUES('','$titulo','$descricao','$texto','$databanco','$imagem','$categoria','$usuario')";
                         if($banco->query($q)){
                              echo msg_sucesso(" $titulo publicada");
                         }else{
