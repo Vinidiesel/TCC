@@ -14,7 +14,10 @@
         </form>
         <table class="chat">
         <?php
-        $data=gmdate('Y-m-d H:i:s');
+        $dataerrada=date('Y-m-d H:i:s');
+        $fuso = new DateTimeZone('America/Sao_Paulo');
+        $data = new DateTime($dataerrada);
+        $data->setTimezone($fuso);
         $diaanterior = gmdate('Y-m-d H:i:s', time()-(3600*27));
         $q="select m.ID_MENSAGEM,m.TEXTO,m.DATA_ENVIO,u.NOME from MENSAGEM m join USUARIO u on m.ID_USUARIO=u.ID_USUARIO WHERE DATA_ENVIO > '$diaanterior' ORDER BY DATA_ENVIO ASC;";
         $busca=$banco->query($q);
@@ -49,12 +52,12 @@
     <?php
         if(isset($_POST['texto'])){
             $mensagem=  $_POST['texto'] ?? null;
-            $data = gmdate('Y-m-d H:i:s');
+            $databanco=$data->format('Y-m-d H:i:s');
             $usuario = $_SESSION['usuario'] ?? null;
             if(empty($mensagem)||empty($data)||empty($usuario)){
                 echo msg_erro('Você precisa digitar um texto');
             }else{
-                $q= "INSERT INTO mensagem(ID_MENSAGEM,TEXTO,DATA_ENVIO,ID_USUARIO) VALUES('','$mensagem','$data','$usuario')";
+                $q= "INSERT INTO mensagem(ID_MENSAGEM,TEXTO,DATA_ENVIO,ID_USUARIO) VALUES('','$mensagem','$databanco','$usuario')";
                 if($banco->query($q)){
                     echo msg_sucesso("Mensagem $mensagem Enviado com sucesso");
                 }else{
