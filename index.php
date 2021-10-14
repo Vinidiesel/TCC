@@ -5,6 +5,16 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="estilos/estilo.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <style>
+
+img.mini{
+    width: 250px;
+}
+
+img.full{
+    height: 400px;
+}
+</style>
 </head>
 <body>
     <?php
