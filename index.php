@@ -37,7 +37,7 @@
                     echo "<tr><td>Nenhum registro encontardo";
                 }else{
                     while($reg=$busca->fetch_object()){
-                        $t = thumb($reg->IMAGEM);
+                        $t = thumb($reg->IMAGEM); 
                         echo "<tr><td><img src='$t' class='mini'>";
                         echo "<td><a href='detalhes.php?cod=$reg->ID_NOTICIA'>$reg->TITULO</a>";
                         echo "[$reg->NOME]";

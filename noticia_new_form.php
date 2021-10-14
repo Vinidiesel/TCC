@@ -1,11 +1,12 @@
 <html> 
 <head>
-    <link rel="stylesheet" href="jquery.cleditor.css" />
+    <link rel="stylesheet" href="formatacao/jquery.cleditor.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="jquery.cleditor.min.js"></script>
+    <script src="formatacao/jquery.cleditor.min.js"></script>
     <script>
         $(document).ready(function () { $("#descricao").cleditor(); });
         $(document).ready(function () { $("#texto").cleditor(); });
+        $(document).ready(function () { $("#titulo").cleditor(); });
     </script>
 </head>
 <body>
@@ -20,7 +21,7 @@ $busca= $banco->query($q);
 
 <form action="noticia_new.php" method="post" name="novofilme">
 <table>
-    <tr><td>Titulo:<td><input type="text" name="titulo" id="titulo" size="30" maxlength="30"></td></tr>
+    <tr><td>Titulo:<td><textarea type="text" name="titulo" id="titulo" size="30" maxlength="30"></textarea></td></tr>
     <br>
     <tr><td>Descricão:<td><textarea  id="descricao" name="descricao"  rows="5"> </textarea></td></tr>
     <br>
