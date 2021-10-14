@@ -14,8 +14,9 @@
         </form>
         <table class="chat">
         <?php
-        $q="select m.ID_MENSAGEM,m.TEXTO,m.DATA_ENVIO,u.NOME from MENSAGEM m join USUARIO u on m.ID_USUARIO=u.ID_USUARIO ";
-        $q.="ORDER BY DATA_ENVIO ASC; ";
+        $data=gmdate('Y-m-d H:i:s');
+        $diaanterior = gmdate('Y-m-d H:i:s', time()-(3600*27));
+        $q="select m.ID_MENSAGEM,m.TEXTO,m.DATA_ENVIO,u.NOME from MENSAGEM m join USUARIO u on m.ID_USUARIO=u.ID_USUARIO WHERE DATA_ENVIO > '$diaanterior' ORDER BY DATA_ENVIO ASC;";
         $busca=$banco->query($q);
         if(!$busca){
             echo "<tr><td>Infelizmente a busca deu errado";
@@ -23,28 +24,32 @@
             if($busca->num_rows==0){
                 echo "<tr><td>Nenhum mensagem encontrada";
             }else{
+                $x=0;
                 while($reg=$busca->fetch_object()){
+                    if($x<44){
                     echo "<br>$reg->TEXTO";
                     echo "[$reg->DATA_ENVIO]";
                     echo "[$reg->NOME]";
-                    /*
-                    if(is_admin()){
-                    }elseif(is_editor()){
-                    }*/
+                    }
+                    $x++;
+
                 }
             }
         }
         ?>
         <br><br/>
         <form action="" method="post">
-        <td><textarea placeholder="Conversar" class="chat" name="texto" rows="1" cols="30"></textarea> 
-        <td><input class="chat" type="submit" value="Enviar">
+        <td><textarea placeholder="Conversar" class="chat" name="texto" rows="1" cols="30"></textarea>
+        <input class="chat" type="submit" value="Enviar">
+        <p>
+        <?php echo voltar();?>
+
     </form>
         
     <?php
         if(isset($_POST['texto'])){
             $mensagem=  $_POST['texto'] ?? null;
-            $data = date('Y-m-d H:i:s');
+            $data = gmdate('Y-m-d H:i:s');
             $usuario = $_SESSION['usuario'] ?? null;
             if(empty($mensagem)||empty($data)||empty($usuario)){
                 echo msg_erro('Você precisa digitar um texto');
@@ -59,6 +64,5 @@
             }
         }
         ?>
-        
         </body>
 </html>
