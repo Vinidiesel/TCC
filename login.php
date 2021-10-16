@@ -25,7 +25,7 @@ function is_admin(){
     if(is_null($t)){
         return false;
     }else{
-        if($t == '0'){
+        if($t == '1'){
             return true;
         }else{
             return false;
@@ -37,7 +37,7 @@ function is_editor(){
     if(is_null($t)){
         return false;
     }else{
-        if($t == '1'){
+        if($t == '2'){
             return true;
         }else{
             return false;
