@@ -50,9 +50,9 @@ img.full{
                         $t = thumb($reg->IMAGEM); 
                         echo "<tr><td><img src='$t' class='mini'>";
                         echo "<td><a href='detalhes.php?cod=$reg->ID_NOTICIA'>$reg->TITULO</a>";
-                        echo "[$reg->NOME]";
+                        echo "<br>[$reg->NOME]";
                         echo "<br>$reg->DESCRICAO";
-                        echo "[$reg->DIA]";
+                        echo "<br>[$reg->DIA]";
 
                         if(is_admin()){
                             echo "<td><i class='material-icons'>add_circle</i>";
