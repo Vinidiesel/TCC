@@ -1,3 +1,5 @@
+CREATE DATABASE ESPORTS DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE ESPORTS;
 -- phpMyAdmin SQL Dump
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
