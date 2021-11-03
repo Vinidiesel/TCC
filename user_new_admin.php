@@ -30,8 +30,9 @@
             $senha1=$_POST['senha1'] ?? null;
             $senha2=$_POST['senha2'] ?? null;
 
-            $q2="SELECT * FROM usuario WHERE nome = '$nome' AND LOGIN_EMAIL = '$email'";
-            if(!$banco->query($q2)){
+            $q2= "SELECT * FROM usuario WHERE nome = '$nome' AND LOGIN_EMAIL = '$email'";
+            $query = $banco->query($q2);
+            if(!$query->num_rows > 0){
             $valideemail=valida_email($email);
             if($valideemail==$email){
             if($senha1 === $senha2){
