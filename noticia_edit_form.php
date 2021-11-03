@@ -13,18 +13,13 @@
 <div id="corpo">
 <h1>NOVA NOTÍCIA </h1>
 <?php
-$q1="select titulo,descricao,texto,CATEGORIA,foto from NOTICIA where cod = '$c'";
+$q1="select titulo,descricao,texto,CATEGORIA,imagem from NOTICIA where ID_NOTICIA = '$c'";
 $q2="select ID_CATEGORIA,NOME from categoria";
-
-               
-$busca= $banco->query($q1);
+$busca= $banco->query($q1);          
 $busca2= $banco->query($q2);
-$reg=$busca->fetch_object();
+$reg= $busca->fetch_object();
 ?>
-<?php
-$q="select ID_CATEGORIA,NOME from CATEGORIA ";
-$busca= $banco->query($q);
-?>
+
 
 
 <form action="noticia_new.php" method="post" name="novofilme">
@@ -33,20 +28,20 @@ $busca= $banco->query($q);
     <br>
     <tr><td>descricão<td><textarea  id="descricao" name="descricao"  rows="5" value="<?php echo $reg->descricao?>"> </textarea></td></tr>
     <br>
-    <tr><td>texto<td><textarea  id="texto" name="texto"  rows="5" value="<?php echo $reg->texto ?>"> </textarea></td></tr>
+    <tr><td>texto<td><textarea  id="texto" name="texto"  rows="5" value="<?php echo $reg->texto?>"> </textarea></td></tr>
     <br>
-    <tr><td>imagem<td><input type="submit"  id="foto" name="foto" value="<?php echo $reg->foto?>" ></td></tr>
+    <tr><td>Foto:<input class="filme" type="file" id="foto" name="foto">
     <br>
-    <tr><td>CATEGORIA<td><select  name="CATEGORIA" id="CATEGORIA" value="<?php echo $reg->CATEGORIA ?>" >     
+    <tr><td>CATEGORIA<td><select  name="CATEGORIA" id="CATEGORIA" value="<?php echo $reg->CATEGORIA?>" >     
 <?php
-      while($reg=$busca3->fetch_object())
+      while($reg2=$busca2->fetch_object())
       {
-          if($reg->cod == $reg->CATEGORIA){
-              echo"<option value='$reg->ID_CATEGORIA'selected>$reg->NOME</option>";
+          if($reg2->ID_CATEGORIA == $reg2->NOME){
+              echo"<option value='$reg2->ID_CATEGORIA'selected>$reg2->NOME</option>";
           
           }
           else{
-               echo "<option value='$reg->ID_CATEGORIA'selected>$reg->NOME</option>";
+               echo "<option value='$reg2->ID_CATEGORIA'selected>$reg->NOME</option>";
           }
       }
               
