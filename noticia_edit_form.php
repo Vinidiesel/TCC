@@ -26,22 +26,22 @@ $reg= $busca->fetch_object();
 <table>
     <tr><td>titulo<td><input type="text" name="titulo" id="titulo" size="30" maxlength="30" value="<?php echo $reg->titulo ?>"></td></tr>
     <br>
-    <tr><td>descricão<td><textarea  id="descricao" name="descricao"  rows="5" value="<?php echo $reg->descricao?>"> </textarea></td></tr>
+    <tr><td>descricão<td><textarea  id="descricao" name="descricao"  rows="5" > <?php echo $reg->descricao?></textarea></td></tr>
     <br>
-    <tr><td>texto<td><textarea  id="texto" name="texto"  rows="5" value="<?php echo $reg->texto?>"> </textarea></td></tr>
+    <tr><td>texto<td><textarea  id="texto" name="texto"  rows="5" ><?php echo $reg->texto?> </textarea></td></tr>
     <br>
     <tr><td>Foto:<input class="filme" type="file" id="foto" name="foto">
     <br>
-    <tr><td>CATEGORIA<td><select  name="CATEGORIA" id="CATEGORIA" value="<?php echo $reg->CATEGORIA?>" >     
+    <tr><td>CATEGORIA<td><select  name="CATEGORIA" id="CATEGORIA" >     
 <?php
       while($reg2=$busca2->fetch_object())
       {
           if($reg2->ID_CATEGORIA == $reg2->NOME){
-              echo"<option value='$reg2->ID_CATEGORIA'selected>$reg2->NOME</option>";
+              echo"<option value='$reg2->ID_CATEGORIA'>$reg2->NOME</option>";
           
           }
           else{
-               echo "<option value='$reg2->ID_CATEGORIA'selected>$reg->NOME</option>";
+               echo "<option value='$reg2->ID_CATEGORIA'>$reg2->NOME</option>";
           }
       }
               
