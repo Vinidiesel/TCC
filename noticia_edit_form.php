@@ -1,12 +1,13 @@
 
 <html> 
 <head>
-    <link rel="stylesheet" href="jquery.cleditor.css" />
+    <link rel="stylesheet" href="formatacao/jquery.cleditor.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="jquery.cleditor.min.js"></script>
+    <script src="formatacao/jquery.cleditor.min.js"></script>
     <script>
         $(document).ready(function () { $("#descricao").cleditor(); });
         $(document).ready(function () { $("#texto").cleditor(); });
+        $(document).ready(function () { $("#titulo").cleditor(); });
     </script>
 </head>
 <body>
