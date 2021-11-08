@@ -23,9 +23,10 @@ $reg= $busca->fetch_object();
 
 
 
-<form action="noticia_new.php" method="post" name="novofilme">
+<form action="noticia_edit.php?cod=<?php echo $c ?>" method="post" name="novonoticia">
 <table>
-    <tr><td>titulo<td><input type="text" name="titulo" id="titulo" size="30" maxlength="30" value="<?php echo $reg->titulo ?>"></td></tr>
+    <tr><td>titulo<td><input type="text" name="titulo" id="titulo" size="30" maxlength="30" value="<?php echo $reg->titulo ?>
+    "></td></tr>
     <br>
     <tr><td>descricão<td><textarea  id="descricao" name="descricao"  rows="5" > <?php echo $reg->descricao?></textarea></td></tr>
     <br>
@@ -49,7 +50,7 @@ $reg= $busca->fetch_object();
 ?>
     </select>
                           
-    
+    <tr><td><input type="submit" value="salvar notícia" ></td></tr>
     
     </table>
 </form>

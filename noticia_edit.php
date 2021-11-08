@@ -20,7 +20,7 @@
         if(!is_logado()){
             echo msg_erro("efetue login para editar como editor para isso");
         }else{
-            if(!isset($_POST['nome'])){
+            if(!isset($_POST['titulo'])){
                 include "noticia_edit_form.php";
             }else{
                $titulo=$_POST['titulo']??null;
@@ -30,10 +30,10 @@
                 $CATEGORIA=$_POST['CATEGORIA']??null;
                
                
-                if(empty($titulo)||empty($descricao)||empty($texto)||empty($foto)||empty($CATEGORIA)){
-                    echo msg_erro('todos os dado devem estar preechido');
+                if(empty($titulo)||empty($descricao)||empty($texto)||empty($CATEGORIA)){
+                    echo msg_erro('todos os dados devem estar preechidos');
                 }else{
-                    $q="update filmes SET titulo='$titulo', descrição='$descricao', texto='$texto', CATEGORIA='$CATEGORIA',  FOTO='$foto'  WHERE ID_NOTICIA = '$c'";
+                    $q="UPDATE noticia SET titulo='$titulo', descricao='$descricao', texto='$texto', categoria='$CATEGORIA',  imagem='$foto'  WHERE ID_NOTICIA = '$c'";
                     
                     if($banco->query($q)){
                         echo msg_sucesso("Notícia $titulo salvo com alterações");
