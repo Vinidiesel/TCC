@@ -37,7 +37,7 @@ img.full{
             <?php
             $q="select n.ID_NOTICIA, n.TITULO, n.DESCRICAO, n.IMAGEM, n.DIA, c.NOME from NOTICIA n join CATEGORIA c on n.CATEGORIA=c.ID_CATEGORIA ";
             if(!empty($chave)){
-                $q.="where n.TITULO like '%$chave%' or c.CATEGORIA like '%$chave%' ";
+                $q.=" where n.TITULO like '%$chave%' or c.CATEGORIA like '%$chave%' ";
             }
             $busca=$banco->query($q);
             if(!$busca){
@@ -56,7 +56,7 @@ img.full{
 
                         if(is_admin()){
                             echo "<td><i class='material-icons'>add_circle</i>";
-                            /*echo "<a href='filme_edit.php?cod=$reg->COD '<i class='material-icons'>edit</i></a>";*/
+                            echo "<a href='noticia_edit.php?cod=$reg->ID_NOTICIA '<i class='material-icons'>edit</i></a>";
                             echo "<i class='material-icons'>delete</i>";
                         }elseif(is_editor()){
                             echo "<td>Alterar";
