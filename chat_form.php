@@ -42,11 +42,12 @@
         }
         ?>
         <br><br/>
-        <form action="" method="post">>
-        <td><textarea placeholder="Conversar" class="chat" name="texto" rows="1" cols="30"></textarea>
+        <form action="" method="post">
+        <textarea placeholder="Conversar" class="chat" name="texto" rows="1" cols="30" style="margin-left: 50%; margin-right: auto; "></textarea>
         <input class="chat" type="submit" value="Enviar" style="position: fixed; top: 20">
-        <p>
+        <p style="position: fixed; bottom: 20px">
         <?php echo voltar();?>
+        </p>
 
     </form>
         
