@@ -10,9 +10,10 @@
 <body>
 <?php include_once "topo.php"; ?>
         <form method="get" id="busca" action="index.php">
-        Buscar: <input type="text" name="c" size="10" maxlength="40">
-        <input type="submit" value="OK">
+        Buscar: <input type="text" name="c" size="20" maxlength="40">
+        <input type="submit" value="OK" style="position: fixed; left: 249px">
         </form>
+        <div style="margin-left: 40%; margin-right: auto; ">
         <table class="chat">
         <?php
         $dataerrada=date('Y-m-d H:i:s');
@@ -31,9 +32,10 @@
                 $x=0;
                 while($reg=$busca->fetch_object()){
                     if($x<44){
-                    echo "<br>$reg->TEXTO";
+                    echo "<br>$reg->NOME: ";
+                    echo "$reg->TEXTO";
                     echo "[$reg->DATA_ENVIO]";
-                    echo "[$reg->NOME]";
+                    
                     }
                     $x++;
 
@@ -43,12 +45,14 @@
         ?>
         <br><br/>
         <form action="" method="post">
-        <textarea placeholder="Conversar" class="chat" name="texto" rows="1" cols="30" style="margin-left: 50%; margin-right: auto; "></textarea>
+            <div style="position: fixed; bottom: 30px">
+        <textarea placeholder="Conversar" class="chat" name="texto" rows="1" cols="30"></textarea>
         <input class="chat" type="submit" value="Enviar" style="position: fixed; top: 20">
-        <p style="position: fixed; bottom: 20px">
+    </div>
+        <p style="position: fixed; bottom: -20px">
         <?php echo voltar();?>
         </p>
-
+    </div>
     </form>
         
     <?php
