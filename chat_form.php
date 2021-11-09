@@ -7,13 +7,13 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
-<body>
+<body style="background-color: lightgray">
 <?php include_once "topo.php"; ?>
         <form method="get" id="busca" action="index.php">
         Buscar: <input type="text" name="c" size="20" maxlength="40">
-        <input type="submit" value="OK" style="position: fixed; left: 249px">
+        <input type="submit" value="OK" style="position: absolute; left: 249px">
         </form>
-        <div style="margin-left: 40%; margin-right: auto; ">
+        <div style="margin: auto; width: 60%;: 5px solid # FFFF00; fill: 10px; max-width: 50%; border-style: solid; border-width: 1px">
         <table class="chat">
         <?php
         $dataerrada=date('Y-m-d H:i:s');
@@ -21,7 +21,7 @@
         $data = new DateTime($dataerrada);
         $data->setTimezone($fuso);
         $diaanterior = gmdate('Y-m-d H:i:s', time()-(3600*27));
-        $q="select m.ID_MENSAGEM,m.TEXTO,m.DATA_ENVIO,u.NOME from MENSAGEM m join USUARIO u on m.ID_USUARIO=u.ID_USUARIO WHERE DATA_ENVIO > '$diaanterior' ORDER BY DATA_ENVIO ASC;";
+        $q="select m.ID_MENSAGEM,m.TEXTO,m.DATA_ENVIO,u.NOME from MENSAGEM m join USUARIO u on m.ID_USUARIO=u.ID_USUARIO WHERE DATA_ENVIO > '$diaanterior' ORDER BY DATA_ENVIO DESC;";
         $busca=$banco->query($q);
         if(!$busca){
             echo "<tr><td>Infelizmente a busca deu errado";
@@ -31,11 +31,11 @@
             }else{
                 $x=0;
                 while($reg=$busca->fetch_object()){
-                    if($x<44){
-                    echo "<br>$reg->NOME: ";
-                    echo "$reg->TEXTO";
-                    echo "[$reg->DATA_ENVIO]";
+                    if($x<7){
                     
+                    echo "<div style='color: red'><br><br>$reg->NOME: </div>";
+                    echo "<br>$reg->TEXTO ";
+                    echo "<div style='color: gray'>[$reg->DATA_ENVIO]</div>";
                     }
                     $x++;
 
@@ -43,10 +43,11 @@
             }
         }
         ?>
+        </table>
         <br><br/>
         <form action="" method="post">
-            <div style="position: fixed; bottom: 30px">
-        <textarea placeholder="Conversar" class="chat" name="texto" rows="1" cols="30"></textarea>
+            <div style="position: fixed; bottom: 30px;">
+        <textarea placeholder="Conversar" class="chat" name="texto" rows="1" cols="96"></textarea>
         <input class="chat" type="submit" value="Enviar" style="position: fixed; top: 20">
     </div>
         <p style="position: fixed; bottom: -20px">
