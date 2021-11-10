@@ -53,6 +53,7 @@
  <table>
   <tr><td>Email: <td><input type="text" name="email" id="email" size="10" maxlenght="10">
   <tr><td>Senha: <td><input type="password" name="senha" id="senha" size="10" maxlenght="10">
+  <tr><td> <?php echo "<a href='user_new.php'>Novo usuario</a> "; ?>
   <tr><td><input type="submit"  value="Enviar">
  </table>
 </form>

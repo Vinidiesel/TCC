@@ -6,8 +6,10 @@ echo "<a href='user_login.php'>Entrar</a>";
 }
 
 else{
+    $busca = $banco->query("SELECT * from usuario WHERE NOME='".$_SESSION['nome']."'");
+    $reg=$busca->fetch_object();
 echo "Olá ". $_SESSION['nome']."</strong> |";
-echo "<a href='user_edit.php'> Meus Dados </a>| ";
+ECHO "<a href='dados.php?cod=$reg->ID_USUARIO'> Meus Dados </a>|";
 echo "<a href='chat.php'> Chat </a>|";
 if(is_admin()){
     echo "<a href='user_new_admin.php'> Novo usuario </a>| ";
