@@ -42,7 +42,7 @@
         ?>
         <br><br/>
         <form action="" method="post">
-        <td><textarea placeholder="Conversar" class="chat" name="texto" rows="1" cols="30"></textarea>
+        <td><input placeholder="Conversar" class="chat" name="texto" rows="1" cols="30">
         <input class="chat" type="submit" value="Enviar">
         <p>
         <?php echo voltar();?>

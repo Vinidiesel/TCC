@@ -32,6 +32,7 @@
                 if($busca->num_rows == 1){
                     echo "<tr><td>Nome: $reg->NOME";
                     echo "<br><tr><td>Email: $reg->LOGIN_EMAIL";
+                    echo "<br><tr><td>Data de criação da conta: $reg->DATA_CADASTRO";
                     while($reg2=$busca2->fetch_object()){
                     echo "<br><tr><td>[$reg2->DATA_ENVIO] Mensagem: $reg2->TEXTO ";
                     }

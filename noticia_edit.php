@@ -17,8 +17,8 @@
      $c= $_GET['cod'] ?? 0;
     ?>
         <?php
-        if(!is_logado()){
-            echo msg_erro("efetue login para editar como editor para isso");
+        if(!is_admin()){
+            echo msg_erro('Área restrita você não tem permisão');
         }else{
             if(!isset($_POST['titulo'])){
                 include "noticia_edit_form.php";

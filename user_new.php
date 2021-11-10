@@ -17,6 +17,10 @@
     ?>
     <div id="corpo">
     <?php
+    $dataerrada=date('Y-m-d H:i:s');
+    $fuso = new DateTimeZone('America/Sao_Paulo');
+    $data = new DateTime($dataerrada);
+    $data->setTimezone($fuso);
         if(!isset($_POST['email'])){
             require "user_new_form.php";
         }else{
@@ -25,6 +29,7 @@
             $nome=$_POST['nome'] ?? null;
             $senha1=$_POST['senha1'] ?? null;
             $senha2=$_POST['senha2'] ?? null;
+            $databanco=$data->format('Y-m-d H:i:s');
 
             $q2= "SELECT * FROM usuario WHERE nome = '$nome' AND LOGIN_EMAIL = '$email'";
             $query = $banco->query($q2);
@@ -36,7 +41,7 @@
                     echo msg_erro('Todos os dados são obrigatórios');
                 }else{
                     $senha=gerarHash($senha1);
-                    $q="INSERT INTO usuario(id_usuario,login_email, nome, senha, ADM)VALUES('','$email','$nome','$senha','3')";
+                    $q="INSERT INTO usuario(id_usuario,login_email, nome, senha, ADM, DATA_CADASTRO)VALUES('','$email','$nome','$senha','3','$databanco')";
                     if($banco->query($q)){
                         echo msg_sucesso("Usuário $nome cadastrado com sucesso");
                     }else{
