@@ -25,8 +25,7 @@ $reg= $busca->fetch_object();
 
 <form action="noticia_edit.php?cod=<?php echo $c ?>" method="post" name="novonoticia">
 <table>
-    <tr><td>titulo<td><input type="text" name="titulo" id="titulo" size="30" maxlength="30" value="<?php echo $reg->titulo ?>
-    "></td></tr>
+    <tr><td>titulo<td><textarea  name="titulo" id="titulo" rows="5"> <?php echo $reg->titulo ?></textarea></td></tr>
     <br>
     <tr><td>descricão<td><textarea  id="descricao" name="descricao"  rows="5" > <?php echo $reg->descricao?></textarea></td></tr>
     <br>

@@ -19,7 +19,7 @@
         $data = new DateTime($dataerrada);
         $data->setTimezone($fuso);
         $diaanterior = gmdate('Y-m-d H:i:s', time()-(3600*27));
-        $q="select m.ID_MENSAGEM,m.TEXTO,m.DATA_ENVIO,u.NOME from MENSAGEM m join USUARIO u on m.ID_USUARIO=u.ID_USUARIO WHERE DATA_ENVIO > '$diaanterior' ORDER BY DATA_ENVIO ASC;";
+        $q="select m.ID_MENSAGEM,m.TEXTO,m.DATA_ENVIO,u.NOME from MENSAGEM m join USUARIO u on m.ID_USUARIO=u.ID_USUARIO WHERE DATA_ENVIO > '$diaanterior' ORDER BY DATA_ENVIO DESC;";
         $busca=$banco->query($q);
         if(!$busca){
             echo "<tr><td>Infelizmente a busca deu errado";
@@ -29,7 +29,7 @@
             }else{
                 $x=0;
                 while($reg=$busca->fetch_object()){
-                    if($x<44){
+                    if($x<8){
                     echo "<br>$reg->TEXTO";
                     echo "[$reg->DATA_ENVIO]";
                     echo "[$reg->NOME]";
