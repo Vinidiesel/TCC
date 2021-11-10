@@ -47,7 +47,7 @@
         <br><br/>
         <form action="" method="post">
             <div style="position: fixed; bottom: 30px;">
-        <textarea placeholder="Conversar" class="chat" name="texto" rows="1" cols="96"></textarea>
+            <input placeholder="Conversar" class="chat" name="texto" rows="1" cols="96">
         <input class="chat" type="submit" value="Enviar" style="position: fixed; top: 20">
     </div>
         <p style="position: fixed; bottom: -20px">
