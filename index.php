@@ -35,6 +35,33 @@ img.full{
         Buscar: <input type="text" name="c" size="10" maxlength="40">
         <input type="submit" value="OK">
         </form>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width: 60%; display: block;
+  margin-left: auto;
+  margin-right: auto;">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+    
+    <a href="https://localhost/TCC-Nicolas008-patch-2/TCC-Nicolas008-patch-2/detalhes.php?cod=3"><img class="d-block w-100" src="https://localhost/TCC-Nicolas008-patch-2/TCC-Nicolas008-patch-2/download%20112.jpg" alt="First slide"></a>
+    </div>
+    <div class="carousel-item">
+    <a href="https://localhost/TCC-Nicolas008-patch-2/TCC-Nicolas008-patch-2/detalhes.php?cod=3"><img class="d-block w-100" src="https://localhost/TCC-Nicolas008-patch-2/TCC-Nicolas008-patch-2/download%2020.jpg" alt="Second slide"></a>
+    </div>
+    
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
         <table class="listagem">
             <?php
             $q="select n.ID_NOTICIA, n.TITULO, n.DESCRICAO, n.IMAGEM, n.DIA, c.NOME from NOTICIA n join CATEGORIA c on n.CATEGORIA=c.ID_CATEGORIA ";
@@ -67,6 +94,7 @@ img.full{
             }
             ?>    
         </table>
+       
     </div>
     <?php 
     //include_once "rodape.php";
