@@ -1,3 +1,4 @@
+<div>
 <h1>Novo usuário</h1>
 <form action="user_new.php" method="post">
 <table>
@@ -12,3 +13,4 @@
 <tr><td><input type="submit" value="Gravar Usuário">
 </table>
 </form>
+</div>

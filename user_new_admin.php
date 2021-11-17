@@ -64,10 +64,11 @@
     }
         }
     }
-
-    echo voltar();
-
     ?>
+    <p style="position: fixed; bottom: -20px">
+    <?php echo voltar();?>
+    </p>
+    
     </div>
     <?php/* require_once "rodape.php" */?>
     </body>
