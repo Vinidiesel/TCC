@@ -24,6 +24,7 @@
         $busca = $banco->query($q);
         if(!$busca){
             echo msg_erro("Falha ao acessar o banco!");
+            echo voltar(); 
         }else{
             if($busca->num_rows>0){
              $reg = $busca->fetch_object();
@@ -42,7 +43,7 @@
             }
         }
     }
-    echo voltar();
+   
     ?>
     </div>
     <?php/* require_once "rodape.php" */?>

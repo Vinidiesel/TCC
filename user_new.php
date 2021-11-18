@@ -60,7 +60,6 @@
     }
         }
 
-    echo voltar();
 
     ?>
     </div>
