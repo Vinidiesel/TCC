@@ -31,10 +31,6 @@ img.full{
     <div id="corpo"><center>
         <?php include_once "topo.php"; ?>
         <h1>Site de noticias</h1>
-        <form method="get" id="busca" action="index.php">
-        Buscar: <input type="text" name="c" size="10" maxlength="40">
-        <input type="submit" value="OK">
-        </form>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width: 60%; display: block;
   margin-left: auto;
   margin-right: auto;">
