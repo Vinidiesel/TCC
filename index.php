@@ -28,7 +28,7 @@ img.full{
     $ordem=$_GET['o'] ?? "n";
     $chave=$_GET['c'] ?? "";
     ?>
-    <div id="corpo">
+    <div id="corpo"><center>
         <?php include_once "topo.php"; ?>
         <h1>Site de noticias</h1>
         <form method="get" id="busca" action="index.php">
@@ -61,7 +61,8 @@ img.full{
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div>
+</div></center>
+    <div><center>
         <table class="listagem">
             <?php
             $q="select n.ID_NOTICIA, n.TITULO, n.DESCRICAO, n.IMAGEM, n.DIA, c.NOME from NOTICIA n join CATEGORIA c on n.CATEGORIA=c.ID_CATEGORIA ";
@@ -95,7 +96,7 @@ img.full{
             ?>    
         </table>
        
-    </div>
+    </div></center>
     <?php 
     //include_once "rodape.php";
     ?>
