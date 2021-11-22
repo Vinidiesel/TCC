@@ -1,4 +1,4 @@
-<center><div style="background-color: lightgray; width: 50%; justify-content: center;"><h1>Novo usuário</h1>
+<center><div style="background-color: black; width: 50%; justify-content: center;"><h1>Novo usuário</h1>
 <form action="user_new_admin.php" method="post">
 <table>
 <tr><td>Email: <td><input type="text" name="email" id="email" size="10">
