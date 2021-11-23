@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<section class="vh-100 gradient-custom">
+<section class="vh-300 gradient-custom">
 <head>
     <title></title>
     <meta charset="UTF-8">
@@ -42,7 +42,7 @@ img.full{
     <div id="corpo"><center>
         <?php include_once "topo.php"; ?>
         <h1>Site de noticias</h1>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width: 60%; display: block;
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width: 50%; display: block;
   margin-left: auto;
   margin-right: auto;">
   <ol class="carousel-indicators">
