@@ -23,7 +23,7 @@
 } 
 </style>
 <body>
-<section class="vh-100 gradient-custom">
+<section class="vh-full gradient-custom">
 <div id="corpo">
 <h1>NOVA NOTÍCIA </h1>
 
@@ -35,15 +35,15 @@ $busca= $banco->query($q);
 
 <form action="noticia_new.php" method="post" name="novofilme">
 <table>
-    <tr><td>Titulo:<td><textarea type="text" name="titulo" id="titulo" size="30" maxlength="30"></textarea></td></tr>
+    <tr><td><h1>Titulo:</h1><td><textarea type="text" name="titulo" id="titulo" size="30" maxlength="30" style =""></textarea></td></tr>
     <br>
-    <tr><td>Descricão:<td><textarea  id="descricao" name="descricao"  rows="5"> </textarea></td></tr>
+    <tr><td><h1>Descricão:</h1><td><textarea  id="descricao" name="descricao"  rows="5"> </textarea></td></tr>
     <br>
-    <tr><td>Texto:<td><textarea  id="texto" name="texto"  rows="5"> </textarea></td></tr>
+    <tr><td><h1>Texto:</h1><td><textarea  id="texto" name="texto"  rows="5"> </textarea></td></tr>
     <br>
-    <tr><td>Foto:<input type="file" id="imagem" name="imagem"></td></tr>
+    <tr><td><h1>Foto:</h1><input type="file" id="imagem" name="imagem"></td></tr>
     <br>
-          <tr><td>Categoria:<td><select name="categoria" id="categoria">
+          <tr><td><h1>Categoria:</h1><td><select name="categoria" id="categoria">
               <?php
               while($reg=$busca->fetch_object()){
                   
@@ -65,6 +65,5 @@ $busca= $banco->query($q);
 </html>
                        
 
-            
-</html>
+<?php echo voltar(); ?> 
 </section>
