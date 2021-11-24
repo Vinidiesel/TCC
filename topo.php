@@ -19,7 +19,7 @@
 ?>
           <li><a href="index.php" class="nav-link px-2 text-white">Home</a></li>
           <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
-          <form method="get" id="busca" action="busca.php">
+          <form method="post" id="busca" action="busca.php">
         Buscar: <input type="text" text-color="white" name="busca" size="10" maxlength="40" text_align="center">
         
         <input type="submit" value="OK">

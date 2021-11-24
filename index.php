@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<section class="vh-300 gradient-custom">
+<section class="vh-100 gradient-custom">
 <head>
     <title></title>
     <meta charset="UTF-8">
@@ -42,7 +42,7 @@ img.full{
     <div id="corpo"><center>
         <?php include_once "topo.php"; ?>
         <h1>Site de noticias</h1>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width: 50%; display: block;
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width: 60%; display: block;
   margin-left: auto;
   margin-right: auto;">
   <ol class="carousel-indicators">
@@ -69,13 +69,10 @@ img.full{
     <span class="sr-only">Next</span>
   </a>
 </div></center>
-    <div><center>
+    <div class="vh-100 gradient-custom"><center>
         <table class="listagem">
             <?php
             $q="select n.ID_NOTICIA, n.TITULO, n.DESCRICAO, n.IMAGEM, n.DIA, c.NOME from NOTICIA n join CATEGORIA c on n.CATEGORIA=c.ID_CATEGORIA ";
-            if(!empty($chave)){
-                $q.=" where n.TITULO like '%$chave%' or c.CATEGORIA like '%$chave%' ";
-            }
             $busca=$banco->query($q);
             if(!$busca){
                 echo "<tr><td>Infelizmente a busca deu errado";

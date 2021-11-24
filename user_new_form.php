@@ -54,7 +54,7 @@
                     </div>
                   </div>
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="submit" class="btn btn-primary btn-lg">Registrar</button>
+                    <button class=" btn btn-outline-light btn-lg px-5">Registrar</button>
                   </div>
 
                 </form>

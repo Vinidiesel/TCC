@@ -17,6 +17,7 @@
     <?php
     logout();
     echo msg_sucesso('Usuario desconectado com sucesso');
+    echo voltar();
     ?>
     </div>
     <?php/* require_once "rodape.php" */?>
