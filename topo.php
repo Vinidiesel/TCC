@@ -19,16 +19,14 @@
 ?>
           <li><a href="index.php" class="nav-link px-2 text-white">Home</a></li>
           <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
-          <form method="post" id="busca" action="busca.php">
-        Buscar: <input type="text" text-color="white" name="busca" size="10" maxlength="40" text_align="center">
-        
-        <input type="submit" value="OK">
-        </form>
         </ul>
-
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" method="post" id="busca" action="busca.php">
+<input type="search" class="form-control form-control-dark" placeholder="Buscar..." aria-label="Search" name="busca">
+</form> 
         <div class="text-end">
         <?php
 echo "<header>";
+
 
 if(empty($_SESSION['email'])){
 echo "<a href='user_login.php'><button type='button' class='btn btn-outline-light me-2'>Entrar</button></a>";

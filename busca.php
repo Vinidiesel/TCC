@@ -35,6 +35,7 @@ $busca = $_POST['busca'];
 
 $sql = "SELECT * FROM noticia WHERE titulo LIKE '%$busca%' or texto LIKE '%$busca%' or descricao LIKE '%$busca%'";
 
+
 $result = $banco->query($sql);
 if(!$result){
     echo "<tr><td>Infelizmente a busca deu errado";
@@ -47,7 +48,11 @@ if(!$result){
             $t = thumb($dados->IMAGEM); 
             echo "<tr><td><img src='$t' class='mini'>";
             echo "<td><a href='detalhes.php?cod=$dados->ID_NOTICIA'>$dados->TITULO</a>";
-            echo "<br>[$dados->NOME]";
+            $ola=$dados->CATEGORIA;
+            $sql2= "SELECT * FROM categoria WHERE ID_CATEGORIA=$ola";
+            $result2 = $banco->query($sql2);
+            $dados2 = $result2->fetch_object();
+            echo "<br>[$dados2->NOME]";
             echo "<br>$dados->DESCRICAO";
             echo "<br>[$dados->DIA]";
 
