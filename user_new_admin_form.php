@@ -1,4 +1,4 @@
-<h1>Novo usuário</h1>
+<center><div style="margin-top: 175px; background-color: white; padding: 50px; width: 40%; justify-content: center;"><h1>Novo usuário</h1>
 <form action="user_new_admin.php" method="post">
 <table>
 <tr><td>Email: <td><input type="text" name="email" id="email" size="10">
@@ -15,5 +15,7 @@
 <tr><td>Confirme Senha: <td><input type="password" name="senha2" id="senha2" size="10" maxlength="10">
 
 <tr><td><input type="submit" value="Gravar Usuário">
+<tr><td><?php echo voltar();?>
 </table>
 </form>
+</div></center>

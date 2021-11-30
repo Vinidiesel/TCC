@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="estilos/estilo.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
-<body>
+<body style="background-color: lightgrey">
 <?php include_once "topo.php"; ?>
         <form method="get" id="busca" action="index.php">
-        Buscar: <input type="text" name="c" size="10" maxlength="40">
-        <input type="submit" value="OK">
+        Buscar: <input type="text" name="c" size="20" maxlength="40">
+        <input type="submit" value="OK" style="position: absolute; left: 249px">
         </form>
+        <div style="margin: auto; width: 60%;: 5px solid # FFFF00; fill: 10px; max-width: 50%; border-style: solid; border-width: 1px">
         <table class="chat">
         <?php
         $dataerrada=date('Y-m-d H:i:s');
@@ -29,10 +31,11 @@
             }else{
                 $x=0;
                 while($reg=$busca->fetch_object()){
-                    if($x<8){
-                    echo "<br>$reg->TEXTO";
-                    echo "[$reg->DATA_ENVIO]";
-                    echo "[$reg->NOME]";
+                    if($x<7){
+                    
+                    echo "<div style='color: Blue'><br><br>$reg->NOME: </div>";
+                    echo "<div style='color: Black'><br>$reg->TEXTO: </div> ";
+                    echo "<div style='color: gray'>[$reg->DATA_ENVIO]</div>";
                     }
                     $x++;
 
@@ -40,13 +43,17 @@
             }
         }
         ?>
+        </table>
         <br><br/>
         <form action="" method="post">
-        <td><input placeholder="Conversar" class="chat" name="texto" rows="1" cols="30">
-        <input class="chat" type="submit" value="Enviar">
-        <p>
+            <div style="position: fixed; bottom: 30px;">
+            <input placeholder="Conversar" class="chat" name="texto" rows="1" cols="96">
+        <input class="chat" type="submit" value="Enviar" style="position: fixed; top: 20">
+    </div>
+        <p style="position: fixed; bottom: -20px">
         <?php echo voltar();?>
-
+        </p>
+    </div>
     </form>
         
     <?php

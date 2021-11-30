@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 </head>
-<body>
+<body style="background-color: lightgrey">
     <?php
     require_once "banco.php";
     require_once "funcoes.php";
@@ -64,10 +64,10 @@
     }
         }
     }
-
-    echo voltar();
-
     ?>
+    <p style="position: fixed; bottom: -20px">
+    </p>
+    
     </div>
     <?php/* require_once "rodape.php" */?>
     </body>
