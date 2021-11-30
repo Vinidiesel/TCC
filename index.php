@@ -8,6 +8,15 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <style>
+        .gradient-custom {
+    /* fallback for old browsers */
+    background: #6a11cb;
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+}
+
 img.mini{
     width: 250px;
     padding: 10px;
@@ -33,33 +42,44 @@ img.full{
     <div id="corpo"><center>
         <?php include_once "topo.php"; ?>
         <h1>Site de noticias</h1>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width: 60%; display: block;
-  margin-left: auto;
-  margin-right: auto;">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 70%">
+  <!-- Indicators -->
   <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
   </ol>
+
+  <!-- Wrapper for slides -->
   <div class="carousel-inner">
-    <div class="carousel-item active">
-    
+    <div class="item active">
     <a href="https://cdn.folhape.com.br/upload/dn_arquivo/2021/11/arcane.jpg"><img class="d-block w-100" src="https://cdn.folhape.com.br/upload/dn_arquivo/2021/11/arcane.jpg" alt="First slide"></a>
     </div>
-    <div class="carousel-item">
+
+    <div class="item">
     <a href="https://i.ytimg.com/vi/skkMrvjQkM0/maxresdefault.jpg"><img class="d-block w-100" src="https://i.ytimg.com/vi/skkMrvjQkM0/maxresdefault.jpg" alt="Second slide"></a>
     </div>
-    
+
+    <div class="item">
+      <img src="https://www.w3schools.com/bootstrap/ny.jpg" alt="New York">
+    </div>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Anterior</span>
   </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Próximo</span>
   </a>
-</div></center>
+</div>
     <div class="vh-100 gradient-custom"><center>
         <table class="listagem">
             <?php
