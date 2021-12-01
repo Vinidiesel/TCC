@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
-<body style="background-color: lightgrey">
+<body>
 <?php include_once "topo.php"; ?>
         <form method="get" id="busca" action="index.php">
         Buscar: <input type="text" name="c" size="20" maxlength="40">
@@ -33,8 +33,8 @@
                 while($reg=$busca->fetch_object()){
                     if($x<7){
                     
-                    echo "<div style='color: Blue'><br><br>$reg->NOME: </div>";
-                    echo "<div style='color: Black'><br>$reg->TEXTO: </div> ";
+                    echo "<div style='color: red'><br><br>$reg->NOME: </div>";
+                    echo "<div style='color: #80bfff'><br>$reg->TEXTO: </div> ";
                     echo "<div style='color: gray'>[$reg->DATA_ENVIO]</div>";
                     }
                     $x++;

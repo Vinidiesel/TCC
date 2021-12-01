@@ -13,17 +13,11 @@
    h1{
     text-align: center;
    }
-   .gradient-custom {
-    /* fallback for old browsers */
-    background: #6a11cb;
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to center, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+
 } 
 </style>
 <body>
-<section  style="background-color: lightgrey">
+<section class="vh-full gradient-custom">
 <div id="corpo">
 <h1>NOVA NOTÍCIA </h1>
 
@@ -65,5 +59,5 @@ $busca= $banco->query($q);
 </html>
                        
 
-<?php echo voltar(); ?>
+<?php echo voltar(); ?> 
 </section>

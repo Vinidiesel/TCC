@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 </head>
-<body style="background-color: lightgrey">
+<body>
     <?php
     require_once "banco.php";
     require_once "funcoes.php";
@@ -66,6 +66,7 @@
     }
     ?>
     <p style="position: fixed; bottom: -20px">
+    <?php echo voltar();?>
     </p>
     
     </div>

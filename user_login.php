@@ -4,17 +4,7 @@
     <title></title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="estilos/estilo.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-      <style>
-      div#corpo{
-          width: 270px;
-          font-size:15pt;
-      }
-      td{
-          padding:6px;
-      }
-      </style>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <?php
@@ -34,6 +24,7 @@
         $busca = $banco->query($q);
         if(!$busca){
             echo msg_erro("Falha ao acessar o banco!");
+            echo voltar(); 
         }else{
             if($busca->num_rows>0){
              $reg = $busca->fetch_object();
@@ -52,7 +43,7 @@
             }
         }
     }
-    echo voltar();
+   
     ?>
     </div>
     <?php/* require_once "rodape.php" */?>
