@@ -1,5 +1,11 @@
-<html> 
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="formatacao/jquery.cleditor.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="formatacao/jquery.cleditor.min.js"></script>
@@ -8,18 +14,17 @@
         $(document).ready(function () { $("#texto").cleditor(); });
         $(document).ready(function () { $("#titulo").cleditor(); });
     </script>
-</head>
-<style>
-   h1{
-    text-align: center;
-   }
-
-} 
+    <style>
 </style>
+</head>
 <body>
-<section class="vh-full gradient-custom">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<?php 
+  require_once "funcoes.php";
+?>
+<section class="vh-full">
 <div id="corpo">
-<h1>NOVA NOTÍCIA </h1>
+<center><h1>NOVA NOTÍCIA </h1></center>
 
 <?php
 $q="select ID_CATEGORIA,NOME from CATEGORIA ";
@@ -27,7 +32,7 @@ $busca= $banco->query($q);
 ?>
 
 
-<form action="noticia_new.php" method="post" name="novofilme">
+<center><form action="noticia_new.php" method="post" name="novofilme">
 <table>
     <tr><td><h1>Titulo:</h1><td><textarea type="text" name="titulo" id="titulo" size="30" maxlength="30" style =""></textarea></td></tr>
     <br>
@@ -48,16 +53,12 @@ $busca= $banco->query($q);
                  </select></td></tr>   
 
                  <br>
-    <tr><td><input type="submit" value="salvar filme" ></td></tr>
-                          
-    
-    
+    <tr><td><input type="submit" class="btn btn-outline-secondary" value="Salvar" ></td></tr>
     </table>
 </form>
+</center>
         </div>
+        
     </body>
 </html>
-                       
-
-<?php echo voltar(); ?> 
 </section>
