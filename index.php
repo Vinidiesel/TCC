@@ -96,7 +96,7 @@ img.full{
                         echo "<pre><td><a href='detalhes.php?cod=$reg->ID_NOTICIA'>$reg->TITULO</a></pre>";
                         echo "<br>$reg->NOME";
                         echo "<br>$reg->DESCRICAO";
-                        echo "<br>[$reg->DIA]";
+                        echo "<br>$reg->DIA";
 
                         if(is_admin()){
                             echo "<td><a href='noticia_edit.php?cod=$reg->ID_NOTICIA'<i class='material-icons'>edit</i></a>";
