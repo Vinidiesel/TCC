@@ -14,9 +14,9 @@
     require_once "funcoes.php";
     require_once "login.php";
     ?>
+    <?php include_once "topo.php"; ?>
     <div id="corpo">
-        <?php include_once "topo.php"; ?>
-        <h1>Meus Dados</h1>
+        <center><h1>Meus Dados</h1></center>
             <?php
             $c= $_GET['cod'] ?? 0;
             if(!is_logado()){
@@ -30,14 +30,18 @@
                 echo "<tr><td>Infelizmente a busca deu errado";
             }else{
                 if($busca->num_rows == 1){
-                    echo "<tr><td>Nome: $reg->NOME";
+                    echo "<div class='container'>
+                    <div class='row'><div class='col-5'><h3><tr><td>Nome: $reg->NOME";
                     echo "<br><tr><td>Email: $reg->LOGIN_EMAIL";
                     echo "<br><tr><td>Data de criação da conta: $reg->DATA_CADASTRO";
+                    echo "<br><br><tr><td>Mensagens:</h3></div></div></div>";
                     while($reg2=$busca2->fetch_object()){
-                    echo "<br><tr><td>[$reg2->DATA_ENVIO] Mensagem: $reg2->TEXTO ";
+                    echo "<div class='container'>
+                    <div class='row'><div class='col'><tr><td>[$reg2->DATA_ENVIO] Mensagem: $reg2->TEXTO </div></div></div>";
                     }
                 }else{ 
-                        echo "<tr><td>Nenhum registro encontardo";
+                        echo "<div class='container'>
+                        <div class='row'><div class='col'><tr><td>Nenhum registro encontardo </div></div></div>";
                 }
             }
         }
