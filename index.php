@@ -33,7 +33,7 @@ img.full{
     <div id="corpo"><center>
         <?php include_once "topo.php"; ?>
         <h1>Site de noticias</h1>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -41,7 +41,7 @@ img.full{
 <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 70%">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="0"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
   </ol>
@@ -107,5 +107,5 @@ img.full{
     //include_once "rodape.php";
     ?>
 </body>
-        </section>
+        </selection>
 </html>
