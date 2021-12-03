@@ -48,7 +48,6 @@
             ?>    
         </table>
     </div>
-    <?php echo voltar();?>
     <?php 
     //include_once "rodape.php";
     ?>

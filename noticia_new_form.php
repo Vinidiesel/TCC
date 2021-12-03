@@ -42,7 +42,7 @@ $busca= $banco->query($q);
     <br>
     <tr><td><h1>Foto:</h1><input type="file" id="imagem" name="imagem"></td></tr>
     <br>
-          <tr><td><h1>Categoria:</h1><td><select name="categoria" id="categoria">
+          <tr><td><h1>Categoria:</h1><td><select class="form-select" aria-label="Default select example" name="categoria" id="categoria">
               <?php
               while($reg=$busca->fetch_object()){
                   

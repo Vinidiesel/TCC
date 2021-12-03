@@ -27,7 +27,7 @@
                 echo "<tr><td>Busca Falhou! $banco->error";
             }else{
                 if($busca1->num_rows == 1){
-                    $reg=$busca1->fetch_object(); *// FFF foco força e fe//
+                    $reg=$busca1->fetch_object(); // FFF foco força e fe//
                     $reg2=$busca2->fetch_object();
                     $t=thumb($reg->IMAGEM ?? ""); 
                     echo "<h2>$reg->TITULO</h2>";
