@@ -9,6 +9,7 @@
 <style>
 img.mini{
     width: 400px;
+    height: 250px;
     padding: 10px;
 }
 
@@ -16,11 +17,17 @@ img.full{
     height: 600px;
     
 }
-
+img.carrosel{
+  width: 91% ;
+  height: 850px;
+}
 .ala{
     padding-top: 2%;
     padding-left: 10%;
     padding-right: 10%;
+}
+.ale{
+  padding-top: 1%;
 }
 </style>
 </head>
@@ -36,8 +43,8 @@ img.full{
     ?>
     <div id="corpo">
         <?php include_once "topo.php"; ?>
-        
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <center><div class="ale">
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -45,27 +52,29 @@ img.full{
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-  <img src="..." alt="...">
+    <a href='detalhes.php?cod=7'><img class="carrosel" src="navi-campea-pgl-major.jpg" alt="...">
   <div class="carousel-caption d-none d-md-block">
-    <h5>...</h5>
-    <p>...</p>
+  <font color="white"><h5><b>PGL Major Stockholm: NAVI derrota G2 e conquista o título; s1mple MVP</b></h5>
+    <p>Em um jogo pegado, e com um grande erro do Niko, a NAVI sai vencedora e com uma trajetória perfeita</p></font></a>
   </div>
+  
 </div>
     <div class="carousel-item">
-  <img src="..." alt="...">
+    <a href='detalhes.php?cod=8'><img class="carrosel" src="tinin.jpg" alt="...">
   <div class="carousel-caption d-none d-md-block">
-    <h5>...</h5>
-    <p>...</p>
+  <font color="white"><h5><b>LoL: Tinowns anuncia saída da Pain; "Que sorte a nossa", diz organização</b></h5>
+    <p>Em postagem de despedida, meio diz que colocou "sonhos, objetivos e carreira acima de tudo" ao anunciar a não renovação de contrato com a Pain</p></font></a>
+
   </div>
 </div>
 <div class="carousel-item">
-  <img src="..." alt="...">
+<a href='detalhes.php?cod=9'><img class="carrosel" src="latto-GODSENT-csgo-800x533.jpg" alt="...">
   <div class="carousel-caption d-none d-md-block">
-    <h5>...</h5>
-    <p>...</p>
+  <font color="white"><h5><b>IEM Winter: GODSENT vence BIG de virada e vai aos playoffs</b></h5>
+    <p>A GODSENT conquistou a segunda vitória na IEM Winter ao derrotar a BIG de virada nesta sexta-feira (3). Com a vitória, a equipe brasileira segue na Upper Bracket e está garantida nos playoffs.</p>
+    </font></a>
   </div>
 </div>
-  </div>
 
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -75,7 +84,7 @@ img.full{
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Próximo</span>
   </a>
-</div>
+</div></div></div></center>
 
 
     <div> 
@@ -88,12 +97,12 @@ img.full{
                 echo "<tr><td><h2>Infelizmente a busca deu errado</h2>";
             }else{
                 if($busca->num_rows==0){
-                    echo "<tr><td><h2>Nenhum registro encontardo</h2>";
+                    echo "<tr><td><h2>Nenhum registro encontrado</h2>";
                 }else{
                     while($reg=$busca->fetch_object()){
                         $t = thumb($reg->IMAGEM); 
                         echo "<tr><td><a href='detalhes.php?cod=$reg->ID_NOTICIA'><img src='$t' class='mini'></a>";
-                        echo "<pre><td><a href='detalhes.php?cod=$reg->ID_NOTICIA'>$reg->TITULO</a></pre>";
+                        echo "<font color='black'><pre><td><a href='detalhes.php?cod=$reg->ID_NOTICIA'><font color='black'>$reg->TITULO</font></a></pre>";
                         echo "<br>$reg->NOME";
                         echo "<br>$reg->DESCRICAO";
                         echo "<br>$reg->DIA";

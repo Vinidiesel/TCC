@@ -36,22 +36,21 @@ img.full{
     ?>
     <div id="corpo">
         <?php include_once "topo.php"; ?>
-    <div> 
     <div class="ala">
         <table class="listagem">
             <?php
             $q="SELECT * from noticia WHERE CATEGORIA=1";
-            $busca2 = $banco->query("SELECT * FROM categoria WHERE ID_CATEGORIA=1");
-            $busca1=$banco->query($q);
-            if(!$busca1){
+            $buscalol=$banco->query($q);
+            $buscalol2 = $banco->query("SELECT * FROM categoria WHERE ID_CATEGORIA=1");
+            if(!$buscalol){
                 echo "<tr><td><h2>Infelizmente a busca deu errado</h2>";
             }else{
-                if($busca1->num_rows==0){
+                if($buscalol->num_rows==0){
                     echo "<tr><td><h2>Nenhum registro encontardo</h2>";
                 }else{
-                    $reg=$busca1->fetch_object(); // FFF foco força e fe//
-                    $reg2=$busca2->fetch_object();
-                    while($reg=$busca1->fetch_object()){
+                    $reg=$buscalol->fetch_object(); // FFF foco força e fe//
+                    $reg2=$buscalol2->fetch_object();
+                    while($reg=$buscalol->fetch_object()){
                         $t = thumb($reg->IMAGEM); 
                         echo "<tr><td><a href='detalhes.php?cod=$reg->ID_NOTICIA'><img src='$t' class='mini'></a>";
                         echo "<pre><td><a href='detalhes.php?cod=$reg->ID_NOTICIA'>$reg->TITULO</a></pre>";
@@ -70,8 +69,7 @@ img.full{
             }
             ?>  
         </table>
-        <div>  
-       
+        </div>  
     </div>
     <?php 
     //include_once "rodape.php";

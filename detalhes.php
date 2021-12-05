@@ -7,10 +7,13 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
       <style>
-.ala{
+.alb{
     padding-top: 2%;
-    padding-left: 23%;
-    padding-right: 10%;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+img.full{
+    width: 70%;
 }
 </style>
 </head>
@@ -27,7 +30,7 @@
         $busca1 = $banco->query("SELECT * from noticia WHERE ID_NOTICIA=$c1");
        include_once "topo.php";
         ?>
-        <div class="ala">
+        <div class="alb">
         <table class='detalhes'>
             <?php
             if(!$busca1){
@@ -49,7 +52,7 @@
             $reg2 = $result2->fetch_object();
                     echo "<br>$reg2->NOME";
                     echo "<p>$reg->DESCRICAO";
-                    echo "<tr><td rowspan='3'><img src='$t' class='full'/>";
+                    echo "<tr><td><center><img src='$t' class='full'/></center>";
                     echo "<p>$reg->TEXTO<br>";
                 }else{
                     echo "<tr><td><h2>Nenhum registro encontardo</h2>";

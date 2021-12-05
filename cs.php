@@ -58,7 +58,6 @@ img.full{
                         echo "<br>$reg2->NOME";
                         echo "<br>$reg->DESCRICAO";
                         echo "<br>$reg->DIA";
-
                         if(is_admin()){
                             echo "<td><a href='noticia_edit.php?cod=$reg->ID_NOTICIA'<i class='material-icons'>edit</i></a>";
                             echo "<a href='delete_form.php?cod=$reg->ID_NOTICIA'<i class='material-icons'>delete</i></a>";
