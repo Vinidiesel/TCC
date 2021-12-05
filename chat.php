@@ -17,7 +17,7 @@
     <div id="corpo">
     <?php
     if(!is_logado()){
-        echo msg_erro('Você não está logado');
+        echo msg_erro('<h2>Você não está logado</h2>');
     }else{
         if(!isset($_POST['nome'])){
             require "chat_form.php";

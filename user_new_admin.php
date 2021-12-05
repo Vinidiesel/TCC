@@ -22,7 +22,7 @@
     $data = new DateTime($dataerrada);
     $data->setTimezone($fuso);
     if(!is_admin()){
-        echo msg_erro('Área restrita! Você não é administrador!');
+        echo msg_erro('<h2>Área restrita! Você não é administrador!</h2>');
     }else{
         if(!isset($_POST['email'])){
             require "user_new_admin_form.php";
@@ -42,25 +42,25 @@
             if($valideemail==$email){
             if($senha1 === $senha2){
                 if(empty($email)||empty($nome)||empty($tipo)||empty($senha1)||empty($senha2)){
-                    echo msg_erro('Todos os dados são obrigatórios');
+                    echo msg_erro('<h2>Todos os dados são obrigatórios</h2>');
                 }else{
                     $senha=gerarHash($senha1);
                     $q="INSERT INTO usuario(id_usuario,login_email, nome, senha, ADM, DATA_CADASTRO)VALUES('','$email','$nome','$senha','$tipo','$databanco')";
                     if($banco->query($q)){
-                        echo msg_sucesso("Usuário $nome cadastrado com sucesso");
+                        echo msg_sucesso("<h2>Usuário</h2> $nome <h2>cadastrado com sucesso</h2>");
                     }else{
-                        echo msg_erro("Não foi possivel criar o usuário $nome");
+                        echo msg_erro("<h2>Não foi possivel criar o usuário</h2> $nome");
                     }
                 }
                 
             }else{
-                echo msg_erro('Senhas não conferem. Repita o procedimento!');
+                echo msg_erro('<h2>Senhas não conferem. Repita o procedimento!</h2>');
             }
         }else{
-            echo msg_erro('Email incorreto');
+            echo msg_erro('<h2>Email incorreto</h2>');
         }
     }else{
-        echo msg_erro('Já exite um usuário registrado com os mesmo dados! Faça login...');
+        echo msg_erro('<h2>Já exite um usuário registrado com os mesmo dados! Faça login...</h2>');
     }
         }
     }

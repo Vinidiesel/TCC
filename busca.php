@@ -17,7 +17,7 @@ img.full{
     height: 600px;
     
 }
-.ala{
+.alo{
     padding-top: 2%;
     padding-left: 10%;
     padding-right: 10%;
@@ -34,7 +34,7 @@ img.full{
            <div id="corpo">
         <?php include_once "topo.php"; ?>
 </div>
-<div class="ala">
+<div class="alo">
         <table class="listagem">
 <?php
 $busca = $_POST['busca'];
@@ -53,14 +53,14 @@ if(!$result){
         while($dados = $result->fetch_object()){
             $t = thumb($dados->IMAGEM); 
             echo "<tr><td><img src='$t' class='mini'>";
-            echo "<td><a href='detalhes.php?cod=$dados->ID_NOTICIA'>$dados->TITULO</a>";
+            echo "<font color='black'><pre><td><a href='detalhes.php?cod=$dados->ID_NOTICIA'><font color='black'>$dados->TITULO</font></a></pre>";
             $ola=$dados->CATEGORIA;
             $sql2= "SELECT * FROM categoria WHERE ID_CATEGORIA=$ola";
             $result2 = $banco->query($sql2);
             $dados2 = $result2->fetch_object();
-            echo "<br>[$dados2->NOME]";
+            echo "<br>$dados2->NOME";
             echo "<br>$dados->DESCRICAO";
-            echo "<br>[$dados->DIA]";
+            echo "<br>$dados->DIA";
 
             if(is_admin()){
                 echo "<td><a href='noticia_edit.php?cod=$dados->ID_NOTICIA'<i class='material-icons'>edit</i></a>";

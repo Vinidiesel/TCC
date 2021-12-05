@@ -18,9 +18,7 @@ $dataerrada=date('Y-m-d H:i:s');
 $fuso = new DateTimeZone('America/Sao_Paulo');
 $data = new DateTime($dataerrada);
 $data->setTimezone($fuso);
-        if(!is_admin()){
-            echo msg_erro('Área restrita você não tem permisão');
-        }else{
+        if(is_admin()||is_editor()){
             if(!isset($_POST['titulo'])){
                 require "noticia_new_form.php";
             }else{
@@ -37,12 +35,15 @@ $data->setTimezone($fuso);
             
   $q= "INSERT INTO NOTICIA(ID_NOTICIA,TITULO,DESCRICAO,TEXTO,DIA,IMAGEM,CATEGORIA,ID_USUARIO) VALUES('','$titulo','$descricao','$texto','$databanco','$imagem','$categoria','$usuario')";
                         if($banco->query($q)){
-                             echo msg_sucesso(" $titulo publicada");
+                             echo msg_sucesso("$titulo <h2>Publicada!</h2>");
                         }else{
-                            echo msg_erro("Erro ao publicar a noticia $titulo");
+                            echo msg_erro("<h2>Erro ao publicar a noticia</h2> $titulo");
                         }
                     }
                 }
+            
+        }else{
+            echo msg_erro('<h2>Área restrita você não tem permisão</h2>');
             }
             ?>
             

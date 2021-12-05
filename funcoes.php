@@ -29,7 +29,7 @@
     }
     function msg_sucesso($m){
         $c=voltar();
-        $resp= "<div class='ala'><div class='alert alert-success' role='alert'>$m!
+        $resp= "<div class='ala'><div class='alert alert-success' role='alert'>$m
         </div>$c</div>";
         return $resp;
     }

@@ -20,7 +20,7 @@
             <?php
             $c= $_GET['cod'] ?? 0;
             if(!is_logado()){
-                echo msg_erro("Efetue o login para editar seus dados");
+                echo msg_erro("<h2>Efetue o login para editar seus dados</h2>");
             }else{
             $busca = $banco->query("SELECT * from usuario where ID_USUARIO='$c'");
             $busca2 = $banco->query("SELECT * from mensagem where ID_USUARIO='$c'");

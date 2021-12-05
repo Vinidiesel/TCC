@@ -20,14 +20,14 @@
     <script><a href="deletar?id=1" onclick="return confirm('Tem certeza que deseja deletar este registro?')">Excluir</a></script>
         <?php
         if(!is_admin()){
-            echo msg_erro('Área restrita você não tem permisão');
+            echo msg_erro('<h2>Área restrita você não tem permisão</h2>');
         }else{
                     $q="DELETE FROM noticia WHERE ID_NOTICIA = '$c'";
                     
                     if($banco->query($q)){
-                        echo msg_sucesso("Notícia deletada com sucessos");
+                        echo msg_sucesso("<h2>Notícia deletada com sucessos</h2>");
                     }else{
-                        echo msg_erro("erro ao deletar a notícia");
+                        echo msg_erro("<h2>erro ao deletar a notícia</h2>");
                     }
         }  
         ?>

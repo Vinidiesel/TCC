@@ -23,23 +23,22 @@
         $q="select id_usuario,login_email, nome, senha, ADM from usuario where login_email='$u' limit 1";
         $busca = $banco->query($q);
         if(!$busca){
-            echo msg_erro("Falha ao acessar o banco!");
-            echo voltar(); 
+            echo msg_erro("<h2>Falha ao acessar o banco!</h2>"); 
         }else{
             if($busca->num_rows>0){
              $reg = $busca->fetch_object();
              //print_r($reg);
              if(testarHash($s,$reg -> senha)){
-                echo msg_sucesso('Logado Com sucesso');
+                echo msg_sucesso('<h2>Logado Com sucesso</h2>');
                 $_SESSION['usuario'] = $reg -> id_usuario;
                 $_SESSION['email'] = $reg -> login_email;
                 $_SESSION['nome'] = $reg -> nome;
                 $_SESSION['adm'] = $reg -> ADM;
              }else{
-                echo msg_erro('Senha inválida');
+                echo msg_erro('<h2>Senha inválida</h2>');
              }
             }else{
-                echo msg_erro('Usuário não existe');
+                echo msg_erro('<h2>Usuário não existe</h2>');
             }
         }
     }

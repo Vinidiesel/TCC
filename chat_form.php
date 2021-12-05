@@ -66,12 +66,12 @@
             $databanco=$data->format('Y-m-d H:i:s');
             $usuario = $_SESSION['usuario'] ?? null;
             if(empty($mensagem)||empty($data)||empty($usuario)){
-                echo msg_erro('Você precisa digitar um texto');
+                echo msg_erro('<h2>Você precisa digitar um texto</h2>');
             }else{
                 $q= "INSERT INTO mensagem(ID_MENSAGEM,TEXTO,DATA_ENVIO,ID_USUARIO) VALUES('','$mensagem','$databanco','$usuario')";
                 if($banco->query($q)){
                 }else{
-                    echo msg_erro("Não foi possivel enviar a mensagem");
+                    echo msg_erro("<h2>Não foi possivel enviar a mensagem</h2>");
                 }
                 echo "<meta http-equiv='refresh' content='0'>";
             }

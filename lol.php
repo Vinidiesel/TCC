@@ -7,8 +7,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <style>
-img.mini{
+img.miniff{
     width: 400px;
+    height: 250px;
     padding: 10px;
 }
 
@@ -17,7 +18,7 @@ img.full{
     
 }
 
-.ala{
+.alo{
     padding-top: 2%;
     padding-left: 10%;
     padding-right: 10%;
@@ -36,25 +37,22 @@ img.full{
     ?>
     <div id="corpo">
         <?php include_once "topo.php"; ?>
-    <div class="ala">
+    <div class="alo">
         <table class="listagem">
             <?php
             $q="SELECT * from noticia WHERE CATEGORIA=1";
-            $buscalol=$banco->query($q);
-            $buscalol2 = $banco->query("SELECT * FROM categoria WHERE ID_CATEGORIA=1");
-            if(!$buscalol){
+            $busca=$banco->query($q);
+            if(!$busca){
                 echo "<tr><td><h2>Infelizmente a busca deu errado</h2>";
             }else{
-                if($buscalol->num_rows==0){
-                    echo "<tr><td><h2>Nenhum registro encontardo</h2>";
+                if($busca->num_rows==0){
+                    echo "<tr><td><h2>Nenhum registro encontrado</h2>";
                 }else{
-                    $reg=$buscalol->fetch_object(); // FFF foco força e fe//
-                    $reg2=$buscalol2->fetch_object();
-                    while($reg=$buscalol->fetch_object()){
+                    while($reg=$busca->fetch_object()){
                         $t = thumb($reg->IMAGEM); 
-                        echo "<tr><td><a href='detalhes.php?cod=$reg->ID_NOTICIA'><img src='$t' class='mini'></a>";
-                        echo "<pre><td><a href='detalhes.php?cod=$reg->ID_NOTICIA'>$reg->TITULO</a></pre>";
-                        echo "<br>$reg2->NOME";
+                        echo "<tr><td><a href='detalhes.php?cod=$reg->ID_NOTICIA'><img src='$t' class='miniff'></a>";
+                        echo "<font color='black'><pre><td><a href='detalhes.php?cod=$reg->ID_NOTICIA'><font color='black'>$reg->TITULO</font></a></pre>";
+                        echo "<br>LEAGUE OF LEGENDS";
                         echo "<br>$reg->DESCRICAO";
                         echo "<br>$reg->DIA";
 
@@ -62,7 +60,7 @@ img.full{
                             echo "<td><a href='noticia_edit.php?cod=$reg->ID_NOTICIA'<i class='material-icons'>edit</i></a>";
                             echo "<a href='delete_form.php?cod=$reg->ID_NOTICIA'<i class='material-icons'>delete</i></a>";
                         }elseif(is_editor()){
-                            echo "<td><a href='noticia_edit.php?cod=$dados->ID_NOTICIA'<i class='material-icons'>edit</i></a>";
+                          echo "<td><a href='noticia_edit.php?cod=$dados->ID_NOTICIA'<i class='material-icons'>edit</i></a>";
                         }
                     }
                 }

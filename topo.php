@@ -17,6 +17,8 @@
     if(is_admin()){
     echo "<li><a href='user_new_admin.php' class='nav-link px-2 text-white'> Novo usuario </a></li>";
     echo "<li><a href='noticia_new.php' class='nav-link px-2 text-white'> Nova Noticia </a></li>";
+}elseif(is_editor()){
+  echo "<li><a href='noticia_new.php' class='nav-link px-2 text-white'> Nova Noticia </a></li>";
 }
 }
 ?>

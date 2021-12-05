@@ -16,7 +16,7 @@
     <div id="corpo">
     <?php
     logout();
-    echo msg_sucesso('Usuario desconectado com sucesso');
+    echo msg_sucesso('<h2>Usuario desconectado com sucesso</h2>');
     ?>
     </div>
     <?php/* require_once "rodape.php" */?>

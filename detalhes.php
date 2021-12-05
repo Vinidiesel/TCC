@@ -42,7 +42,7 @@ img.full{
                         echo "<a href='noticia_edit.php?cod=$reg->ID_NOTICIA '<i class='material-icons'>edit</i></a>";
                         echo "<a href='delete_form.php?cod=$reg->ID_NOTICIA '<i class='material-icons'>delete</i></a>";
                     }elseif(is_editor()){
-                        echo "<td><a href='noticia_edit.php?cod=$dados->ID_NOTICIA'<i class='material-icons'>edit</i></a>";
+                        echo "<td><a href='noticia_edit.php?cod=$reg->ID_NOTICIA'<i class='material-icons'>edit</i></a>";
                     }
                     $t=thumb($reg->IMAGEM ?? ""); 
                     echo "<h2>$reg->TITULO</h2>";
