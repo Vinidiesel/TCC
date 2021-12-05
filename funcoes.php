@@ -6,6 +6,13 @@
     <link rel="stylesheet" href="estilos/estilo.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+.ala{
+    padding-top: 2%;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+</style>
 </head>
 <body>
 <?php
@@ -18,21 +25,12 @@
         }
     }
     function voltar(){
-        return "<a href='index.php'><span class='material-icons'>arrow_back</span></a>";
+        return "<a href='index.php'><span class='material-icons'>home</span></a>";
     }
-    $c=voltar();
     function msg_sucesso($m){
         $c=voltar();
-        $resp= "<div class='container'>
-        <div class='row'>
-          <div class='col'>
-          <div class='alert alert-success' role='alert'>
-          <h4 class='alert-heading'>$m!</h4>
-          </div>
-          </div>
-          $c
-          </div>
-          </div>";
+        $resp= "<div class='ala'><div class='alert alert-success' role='alert'>$m!
+        </div>$c</div>";
         return $resp;
     }
     function msg_aviso($m){
@@ -42,10 +40,8 @@
         echo voltar(); 
     }
     function msg_erro($m){
-        $resp= "<div class='erro'><span class='material-icons'>error</span> $m </div>";
-        
+        $resp= "<div class='ala'><div class='alert alert-danger' role='alert'> $m  </div></div>";
         return $resp;
-        echo voltar(); 
     }
     function valida_email($email) {
         return filter_var($email, FILTER_VALIDATE_EMAIL);

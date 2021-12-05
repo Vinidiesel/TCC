@@ -39,7 +39,7 @@ $data->setTimezone($fuso);
                         if($banco->query($q)){
                              echo msg_sucesso(" $titulo publicada");
                         }else{
-                            echo msg_erro("erro ao publicar a noticia $titulo");
+                            echo msg_erro("Erro ao publicar a noticia $titulo");
                         }
                     }
                 }

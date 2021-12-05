@@ -63,9 +63,6 @@
             </div>
           </div>
         </div>
-        <?php 
-   echo voltar(); 
-  ?>
       </div>
     </div>
   </div>

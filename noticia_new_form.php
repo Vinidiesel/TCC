@@ -53,7 +53,7 @@ $busca= $banco->query($q);
                  </select></td></tr>   
 
                  <br>
-    <tr><td><input type="submit" class="btn btn-outline-secondary" value="Salvar" ></td></tr>
+    <tr><td><input type="submit" class="btn btn-outline-secondary" value="Salvar Notícia" ></td></tr>
     </table>
 </form>
 </center>

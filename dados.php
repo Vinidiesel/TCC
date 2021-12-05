@@ -27,7 +27,7 @@
             $reg=$busca->fetch_object();
             $reg2=$busca2->fetch_object();
             if(!$busca){
-                echo "<tr><td>Infelizmente a busca deu errado";
+                echo "<tr><td><h2>Infelizmente a busca deu errado</h2>";
             }else{
                 if($busca->num_rows == 1){
                     echo "<div class='container'>
@@ -41,7 +41,7 @@
                     }
                 }else{ 
                         echo "<div class='container'>
-                        <div class='row'><div class='col'><tr><td>Nenhum registro encontardo </div></div></div>";
+                        <div class='row'><div class='col'><tr><td><h2>Nenhum registro encontardo</h2></div></div></div>";
                 }
             }
         }

@@ -2,7 +2,7 @@
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="index.php" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-        <img src="logo.png" alt="" width="60" height="65">
+        <img src="logo.png" alt="" width="55" height="60">
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
@@ -37,48 +37,7 @@ echo "<a href='user_new.php'><button type='button' class='btn btn-warning'>Sign-
     echo "<a href='user_logout.php'><button type='button' class='btn btn-warning'>Sair</button></a>";
 }
 ?>
-<?php /*else{
-    $busca = $banco->query("SELECT * from usuario WHERE NOME='".$_SESSION['nome']."'");
-    $reg=$busca->fetch_object();
-echo "Olá ". $_SESSION['nome']."</strong> |";
-ECHO "<a href='dados.php?cod=$reg->ID_USUARIO'><button type='button' class='btn btn-outline-light me-2'> Meus Dados </button></a>|";
-echo "<a href='chat.php'> Chat </a>|";
-if(is_admin()){
-    echo "<a href='user_new_admin.php'> Novo usuario </a>| ";
-    echo "<a href='noticia_new.php'> Nova Noticia </a> |";
-}
-echo "<a href='user_logout.php'>Sair</a>";
-}
-
-echo "</header>";
-*/?>
         </div>
       </div>
     </div>
   </header>
-
-
-
-<?php 
-/*
-echo "<header>";
-
-if(empty($_SESSION['email'])){
-echo "<a href='user_login.php'><button type='button' class='btn btn-outline-light me-2'>Entrar</button></a>";
-}
-
-else{
-    $busca = $banco->query("SELECT * from usuario WHERE NOME='".$_SESSION['nome']."'");
-    $reg=$busca->fetch_object();
-echo "Olá ". $_SESSION['nome']."</strong> |";
-ECHO "<a href='dados.php?cod=$reg->ID_USUARIO'> Meus Dados </a>|";
-echo "<a href='chat.php'> Chat </a>|";
-if(is_admin()){
-    echo "<a href='user_new_admin.php'> Novo usuario </a>| ";
-    echo "<a href='noticia_new.php'> Nova Noticia </a> |";
-}
-echo "<a href='user_logout.php'>Sair</a>";
-}
-
-echo "</header>";
-*/?>

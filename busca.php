@@ -9,13 +9,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <style>
 img.mini{
-    width: 250px;
+    width: 400px;
     padding: 10px;
 }
 
 img.full{
     height: 600px;
     
+}
+.ala{
+    padding-top: 2%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 </style>
 </head>
@@ -26,10 +31,11 @@ img.full{
            include_once('funcoes.php');
            require_once "login.php";
            ?>
-           <div id="corpo"><center>
+           <div id="corpo">
         <?php include_once "topo.php"; ?>
-        <h1>Site de noticias</h1>
 </div>
+<div class="ala">
+        <table class="listagem">
 <?php
 $busca = $_POST['busca'];
 
@@ -38,10 +44,10 @@ $sql = "SELECT * FROM noticia WHERE titulo LIKE '%$busca%' or texto LIKE '%$busc
 
 $result = $banco->query($sql);
 if(!$result){
-    echo "<tr><td>Infelizmente a busca deu errado";
+    echo "<tr><td><h2>Infelizmente a busca deu errado</h2>";
 }else{
     if($result->num_rows==0){
-        echo "<tr><td>Nenhum registro encontardo";
+        echo "<tr><td><h2>Nenhum registro encontardo</h2>";
     }else{
         
         while($dados = $result->fetch_object()){
@@ -60,7 +66,7 @@ if(!$result){
                 echo "<td><a href='noticia_edit.php?cod=$dados->ID_NOTICIA'<i class='material-icons'>edit</i></a>";
                 echo "<a href='delete_form.php?cod=$dados->ID_NOTICIA'<i class='material-icons'>delete</i></a>";
             }elseif(is_editor()){
-                echo "<td>Alterar";
+                echo "<td><a href='noticia_edit.php?cod=$dados->ID_NOTICIA'<i class='material-icons'>edit</i></a>";
             }
         }
     }
@@ -68,7 +74,7 @@ if(!$result){
 ?>    
 </table>
 
-</div></center>
+</div>
 <?php 
 //include_once "rodape.php";
 ?>

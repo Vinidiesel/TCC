@@ -85,10 +85,10 @@ img.full{
             $q="select n.ID_NOTICIA, n.TITULO, n.DESCRICAO, n.IMAGEM, n.DIA, c.NOME from NOTICIA n join CATEGORIA c on n.CATEGORIA=c.ID_CATEGORIA ";
             $busca=$banco->query($q);
             if(!$busca){
-                echo "<tr><td>Infelizmente a busca deu errado";
+                echo "<tr><td><h2>Infelizmente a busca deu errado</h2>";
             }else{
                 if($busca->num_rows==0){
-                    echo "<tr><td>Nenhum registro encontardo";
+                    echo "<tr><td><h2>Nenhum registro encontardo</h2>";
                 }else{
                     while($reg=$busca->fetch_object()){
                         $t = thumb($reg->IMAGEM); 
@@ -102,7 +102,7 @@ img.full{
                             echo "<td><a href='noticia_edit.php?cod=$reg->ID_NOTICIA'<i class='material-icons'>edit</i></a>";
                             echo "<a href='delete_form.php?cod=$reg->ID_NOTICIA'<i class='material-icons'>delete</i></a>";
                         }elseif(is_editor()){
-                            echo "<td>Alterar";
+                          echo "<td><a href='noticia_edit.php?cod=$dados->ID_NOTICIA'<i class='material-icons'>edit</i></a>";
                         }
                     }
                 }
