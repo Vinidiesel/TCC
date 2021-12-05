@@ -19,7 +19,6 @@ img.full{
 }
 img.carrosel{
   width: 91% ;
-  height: 850px;
 }
 .ala{
     padding-top: 2%;
@@ -60,7 +59,7 @@ img.carrosel{
   
 </div>
     <div class="carousel-item">
-    <a href='detalhes.php?cod=8'><img class="carrosel" src="tinin.jpg" alt="...">
+    <a href='detalhes.php?cod=8'><img class="carrosel" src="tinin2.jpg" alt="...">
   <div class="carousel-caption d-none d-md-block">
   <font color="white"><h5><b>LoL: Tinowns anuncia saída da Pain; "Que sorte a nossa", diz organização</b></h5>
     <p>Em postagem de despedida, meio diz que colocou "sonhos, objetivos e carreira acima de tudo" ao anunciar a não renovação de contrato com a Pain</p></font></a>
@@ -68,7 +67,7 @@ img.carrosel{
   </div>
 </div>
 <div class="carousel-item">
-<a href='detalhes.php?cod=9'><img class="carrosel" src="latto-GODSENT-csgo-800x533.jpg" alt="...">
+<a href='detalhes.php?cod=9'><img class="carrosel" src="TACO-GODSENT-PGL-Major-Stockholm-csgo-800x534.jpg" alt="...">
   <div class="carousel-caption d-none d-md-block">
   <font color="white"><h5><b>IEM Winter: GODSENT vence BIG de virada e vai aos playoffs</b></h5>
     <p>A GODSENT conquistou a segunda vitória na IEM Winter ao derrotar a BIG de virada nesta sexta-feira (3). Com a vitória, a equipe brasileira segue na Upper Bracket e está garantida nos playoffs.</p>
