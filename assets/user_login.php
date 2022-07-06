@@ -18,7 +18,7 @@
     $s=$_POST['senha']?? null;
 
     if(is_null($u)|| is_null($s)){
-        require "user_login_form.php";
+        require "forms/user_login_form.php";
     }else{
         $q="select id_usuario,login_email, nome, senha, ADM from usuario where login_email='$u' limit 1";
         $busca = $banco->query($q);
@@ -45,7 +45,6 @@
    
     ?>
     </div>
-    <?php/* require_once "rodape.php" */?>
 </body>
 
 </html>

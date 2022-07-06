@@ -21,16 +21,12 @@
     $fuso = new DateTimeZone('America/Sao_Paulo');
     $data = new DateTime($dataerrada);
     $data->setTimezone($fuso);
-    if(!is_admin()){
-        echo msg_erro('<h2>Área restrita! Você não é administrador!</h2>');
-    }else{
         if(!isset($_POST['email'])){
-            require "user_new_admin_form.php";
+            require "forms/user_new_form.php";
         }else{
 
             $email=$_POST['email'] ?? null;
             $nome=$_POST['nome'] ?? null;
-            $tipo=$_POST['tipo'] ?? null;
             $senha1=$_POST['senha1'] ?? null;
             $senha2=$_POST['senha2'] ?? null;
             $databanco=$data->format('Y-m-d H:i:s');
@@ -41,11 +37,11 @@
             $valideemail=valida_email($email);
             if($valideemail==$email){
             if($senha1 === $senha2){
-                if(empty($email)||empty($nome)||empty($tipo)||empty($senha1)||empty($senha2)){
+                if(empty($email)||empty($nome)||empty($senha1)||empty($senha2)){
                     echo msg_erro('<h2>Todos os dados são obrigatórios</h2>');
                 }else{
                     $senha=gerarHash($senha1);
-                    $q="INSERT INTO usuario(id_usuario,login_email, nome, senha, ADM, DATA_CADASTRO)VALUES('','$email','$nome','$senha','$tipo','$databanco')";
+                    $q="INSERT INTO usuario(id_usuario,login_email, nome, senha, ADM, DATA_CADASTRO)VALUES('','$email','$nome','$senha','3','$databanco')";
                     if($banco->query($q)){
                         echo msg_sucesso("<h2>Usuário</h2> $nome <h2>cadastrado com sucesso</h2>");
                     }else{
@@ -63,10 +59,9 @@
         echo msg_erro('<h2>Já exite um usuário registrado com os mesmo dados! Faça login...</h2>');
     }
         }
-    }
+
+
     ?>
-    
     </div>
-    <?php/* require_once "rodape.php" */?>
     </body>
 </html>

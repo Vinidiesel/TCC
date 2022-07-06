@@ -2,13 +2,13 @@
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="index.php" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-        <img src="logo.png" alt="" width="55" height="60">
+        <img src="images/logo.png" alt="" width="55" height="60">
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="lol.php" class="nav-link px-2 text-white">League of Legends</a></li>
-        <li><a href="cs.php" class="nav-link px-2 text-white">CSGO</a></li>
-        <li><a href="ff.php" class="nav-link px-2 text-white">Free Fire</a></li>
+        <li><a href="../assets/lol.php" class="nav-link px-2 text-white">League of Legends</a></li>
+        <li><a href="../assets/cs.php" class="nav-link px-2 text-white">CSGO</a></li>
+        <li><a href="../assets/ff.php" class="nav-link px-2 text-white">Free Fire</a></li>
         <?php
         if($_SESSION['email']){
     $busca = $banco->query("SELECT * from usuario WHERE NOME='".$_SESSION['nome']."'");

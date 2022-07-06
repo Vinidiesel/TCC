@@ -3,7 +3,6 @@
 <head>
     <title></title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="estilos/estilo.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <style>
@@ -51,7 +50,7 @@ img.carrosel{
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-    <a href='detalhes.php?cod=7'><img class="carrosel" src="navi-campea-pgl-major.jpg" alt="...">
+    <a href='detalhes.php?cod=7'><img class="carrosel" src="images/navi-campea-pgl-major.jpg" alt="...">
   <div class="carousel-caption d-none d-md-block">
   <font color="white"><h5><b>PGL Major Stockholm: NAVI derrota G2 e conquista o título; s1mple MVP</b></h5>
     <p>Em um jogo pegado, e com um grande erro do Niko, a NAVI sai vencedora e com uma trajetória perfeita</p></font></a>
@@ -59,7 +58,7 @@ img.carrosel{
   
 </div>
     <div class="carousel-item">
-    <a href='detalhes.php?cod=8'><img class="carrosel" src="tinin2.jpg" alt="...">
+    <a href='detalhes.php?cod=8'><img class="carrosel" src="images/tinin2.jpg" alt="...">
   <div class="carousel-caption d-none d-md-block">
   <font color="white"><h5><b>LoL: Tinowns anuncia saída da Pain; "Que sorte a nossa", diz organização</b></h5>
     <p>Em postagem de despedida, meio diz que colocou "sonhos, objetivos e carreira acima de tudo" ao anunciar a não renovação de contrato com a Pain</p></font></a>
@@ -67,7 +66,7 @@ img.carrosel{
   </div>
 </div>
 <div class="carousel-item">
-<a href='detalhes.php?cod=9'><img class="carrosel" src="TACO-GODSENT-PGL-Major-Stockholm-csgo-800x534.jpg" alt="...">
+<a href='detalhes.php?cod=9'><img class="carrosel" src="images/TACO-GODSENT-PGL-Major-Stockholm-csgo-800x534.jpg" alt="...">
   <div class="carousel-caption d-none d-md-block">
   <font color="white"><h5><b>IEM Winter: GODSENT vence BIG de virada e vai aos playoffs</b></h5>
     <p>A GODSENT conquistou a segunda vitória na IEM Winter ao derrotar a BIG de virada nesta sexta-feira (3). Com a vitória, a equipe brasileira segue na Upper Bracket e está garantida nos playoffs.</p>
@@ -109,7 +108,7 @@ img.carrosel{
 
                         if(is_admin()){
                             echo "<td><a href='noticia_edit.php?cod=$reg->ID_NOTICIA'<i class='material-icons'>edit</i></a>";
-                            echo "<a href='delete_form.php?cod=$reg->ID_NOTICIA'<i class='material-icons'>delete</i></a>";
+                            echo "<a href='forms/delete_form.php?cod=$reg->ID_NOTICIA'<i class='material-icons'>delete</i></a>";
                         }elseif(is_editor()){
                           echo "<td><a href='noticia_edit.php?cod=$reg->ID_NOTICIA'<i class='material-icons'>edit</i></a>";
                         }

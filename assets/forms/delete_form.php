@@ -22,7 +22,7 @@ $c= $_GET['cod'] ?? 0;
 echo "<h4 class='alert-heading'>Quer mesmo excluir essa noticia?</h4>";
 echo "<p>Ao clicar em sim a noticia será excluída permanentemente</p>
 <hr>";
-echo "<p class='mb-0'><a href='delete.php?cod=$c'>Sim</a> | <a href='index.php'>Não</a></p>";
+echo "<p class='mb-0'><a href='delete.php?cod=$c'>Sim</a> | <a href='../index.php'>Não</a></p>";
 ?>
 </div>
 </div>

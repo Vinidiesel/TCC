@@ -62,8 +62,5 @@ img.full{
         </table>
         </div>
     </div>
-    <?php/*
-    include_once "rodape.php";
-    */?>
 </body>
 </html>

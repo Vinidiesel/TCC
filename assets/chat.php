@@ -20,7 +20,7 @@
         echo msg_erro('<h2>Você não está logado</h2>');
     }else{
         if(!isset($_POST['nome'])){
-            require "chat_form.php";
+            require "forms/chat_form.php";
         }
     }
         ?>

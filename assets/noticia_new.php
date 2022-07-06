@@ -20,7 +20,7 @@ $data = new DateTime($dataerrada);
 $data->setTimezone($fuso);
         if(is_admin()||is_editor()){
             if(!isset($_POST['titulo'])){
-                require "noticia_new_form.php";
+                require "forms/noticia_new_form.php";
             }else{
                      $titulo = $_POST['titulo'] ?? null;
                      $descricao = $_POST['descricao'] ?? null;

@@ -19,6 +19,5 @@
     echo msg_sucesso('<h2>Usuario desconectado com sucesso</h2>');
     ?>
     </div>
-    <?php/* require_once "rodape.php" */?>
     </body>
 </html>
